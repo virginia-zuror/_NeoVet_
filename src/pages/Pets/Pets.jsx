@@ -1,4 +1,4 @@
-import "./Pets.css"
+import './Pets.css';
 
 const Pets = () => {
   return (
@@ -6,6 +6,6 @@ const Pets = () => {
       <h2>Pets</h2>
     </div>
   );
-}
+};
 
 export default Pets;

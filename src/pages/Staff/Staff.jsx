@@ -1,4 +1,4 @@
-import "./Staff.css"
+import './Staff.css';
 
 const Staff = () => {
   return (
@@ -6,6 +6,6 @@ const Staff = () => {
       <h2>Staff</h2>
     </div>
   );
-}
+};
 
 export default Staff;
