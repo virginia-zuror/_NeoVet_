@@ -1,4 +1,4 @@
-import "./UserClients.css"
+import './UserClients.css';
 
 const UserClients = () => {
   return (
@@ -6,6 +6,6 @@ const UserClients = () => {
       <h2>UserClients</h2>
     </div>
   );
-}
+};
 
 export default UserClients;
