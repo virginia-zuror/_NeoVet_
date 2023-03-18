@@ -8,6 +8,8 @@ import App from './App';
 import NeovetContextProvider from './context/neovetContext';
 import EditClientProfile from './pages/EditClientProfile/EditClientProfile';
 import Home from './pages/Home/Home';
+import LoginClient from './pages/LoginClient/LoginClient';
+import LoginStaff from './pages/LoginStaff/LoginStaff';
 import NotFound from './pages/NotFound/NotFound';
 import Pets from './pages/Pets/Pets';
 import Staff from './pages/Staff/Staff';
@@ -20,6 +22,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<Home />} />
+            <Route path="/loginstaff" element={<LoginStaff />} />
+            <Route path="/loginclientes" element={<LoginClient />} />
             <Route path="/pets" element={<Pets />} />
             <Route path="/staff" element={<Staff />} />
             <Route path="/userclients" element={<UserClients />} />

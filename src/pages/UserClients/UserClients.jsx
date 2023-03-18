@@ -2,9 +2,9 @@ import './UserClients.css';
 
 const UserClients = () => {
   return (
-    <div>
+    <main>
       <h2>UserClients</h2>
-    </div>
+    </main>
   );
 };
 
