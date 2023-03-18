@@ -2,9 +2,9 @@ import './EditClientProfile.css';
 
 const EditClientProfile = () => {
   return (
-    <div>
+    <main>
       <h2>EditClientProfile</h2>
-    </div>
+    </main>
   );
 };
 

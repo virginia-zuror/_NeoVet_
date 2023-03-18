@@ -6,26 +6,29 @@ import { NavLink } from 'react-router-dom';
 import { NeovetContext } from '../../context/neovetContext';
 
 const Header = () => {
-  const { login, user } = useContext(NeovetContext);
+  const { logout, user } = useContext(NeovetContext);
   return (
     <div className="header">
       <h2>Logo</h2>
-      <ul>
+      <ul className="links">
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <a href="" to="/">
-            Login Staff
-          </a>
+          <NavLink to="/loginstaff">Login Staff</NavLink>
         </li>
         <li>
-          <button to="/">Logout</button>
+          <NavLink to="/loginclientes">Login Clientes</NavLink>
+        </li>
+        <li>
+          <button to="/" onClick={logout}>
+            Logout
+          </button>
         </li>
         <li>
           <NavLink to="/editprofile">Profile</NavLink>
         </li>
-        <li>{user ? <h2>{user.name}</h2> : <h2>Anonimo</h2>}</li>
+        <li>{user ? <h2>{user.name}</h2> : <h2>Invitado</h2>}</li>
       </ul>
     </div>
   );

@@ -3,7 +3,7 @@ import './Staff.css';
 const Staff = () => {
   return (
     <div>
-      <h2>Staff</h2>
+      <main>Staff</main>
     </div>
   );
 };

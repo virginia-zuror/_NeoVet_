@@ -2,9 +2,9 @@ import './Pets.css';
 
 const Pets = () => {
   return (
-    <div>
+    <main>
       <h2>Pets</h2>
-    </div>
+    </main>
   );
 };
 
