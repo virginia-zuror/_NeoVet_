@@ -60,20 +60,27 @@ const Header = () => {
             <Button padding="lg" text="Logout" variant="contained" action={logout} />
           </li>
         ) : (
-          <li>
-            <select
-              defaultValue="default "
-              name="loginSelect"
-              onChange={(e) => {
-                selection = e.target.value;
-                loginSelected();
-              }}
-            >
-              <option value="default">Loguéate</option>
-              <option value="loginstaff">Login Staff</option>
-              <option value="loginclients">Login Clientes</option>
-            </select>
-          </li>
+          <>
+            <li>
+              <select
+                defaultValue="default "
+                name="loginSelect"
+                onChange={(e) => {
+                  selection = e.target.value;
+                  loginSelected();
+                }}
+              >
+                <option value="default">Loguéate</option>
+                <option value="loginstaff">Login Staff</option>
+                <option value="loginclients">Login Clientes</option>
+              </select>
+            </li>
+            <li>
+              <a href="#formulario">
+                <Button text="Regístrate" padding="lg" variant="contained" />
+              </a>
+            </li>
+          </>
         )}
       </ul>
     </div>
