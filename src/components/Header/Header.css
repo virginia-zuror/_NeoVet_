@@ -1,9 +1,18 @@
 .header {
-  height: 15vh;
+  width: 100%;
+  min-height: 10vh;
+  padding: 1rem 4rem;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
+  background-color: var(--highlightcolor);
+  color: var(--primarycolor);
+}
+.header > h2{
+ position: relative;
+ left: 5%;
 }
 
 .header > .links {
@@ -12,4 +21,17 @@
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
+}
+.header > .links > li> select {
+  color: var(--secondarycolor);
+  border: none;
+}
+.header > .links > li> select:focus{
+  outline: none;
+}
+.header > .links > li> .active{
+  
+  border-bottom: 2px solid var(--primarycolor);
+  
+  
 }
