@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <main>
       <h2>Formulario de registro</h2>
-      <form onSubmit={handleSubmit(formSubmit)}>
+      <form onSubmit={handleSubmit(formSubmit)} id="formulario">
         <div className="container-name">
           <label htmlFor="name">Nombre</label>
           <input
