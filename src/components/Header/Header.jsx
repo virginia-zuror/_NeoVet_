@@ -4,6 +4,7 @@ import { useContext } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 
 import { NeovetContext } from '../../context/neovetContext';
+import Button from '../../UI/Button';
 
 const Header = () => {
   const { logout, user } = useContext(NeovetContext);
@@ -27,11 +28,11 @@ const Header = () => {
       </abbr>
       {user ? (
         <>
-          <h2>Hola {user.name}</h2>
+          <h2>Hola, {user.name}</h2>
         </>
       ) : (
         <>
-          <h2>Hola Invitado</h2>
+          <h2>Hola, invitado</h2>
         </>
       )}
       <ul className="links">
@@ -56,9 +57,7 @@ const Header = () => {
         )}
         {localStorage.getItem('token') ? (
           <li>
-            <button to="/" onClick={logout}>
-              Logout
-            </button>
+            <Button padding="lg" text="Logout" variant="contained" action={logout} />
           </li>
         ) : (
           <li>
@@ -70,7 +69,7 @@ const Header = () => {
                 loginSelected();
               }}
             >
-              <option value="default">Logéate</option>
+              <option value="default">Loguéate</option>
               <option value="loginstaff">Login Staff</option>
               <option value="loginclients">Login Clientes</option>
             </select>
