@@ -11,13 +11,17 @@ const Home = () => {
   let navigate = useNavigate();
 
   const formSubmit = (formData) => {
-      
-  }
+     API.post("/userclients", formData)
+     .then((res) => {
+      console.log(res.data)
+     })
+  };
+
 
   return (
     <main>
       <h2>Formulario de registro</h2>
-      <form onSubmit={handleSubmit(register)}>
+      <form onSubmit={handleSubmit(formSubmit)}>
         <div className="container-name">
           <label htmlFor="name">Nombre</label>
           <input 
@@ -32,43 +36,74 @@ const Home = () => {
           <label htmlFor="address">Dirección</label>
             <input 
               type="text" 
-              id="adress" 
+              id="address" 
               name="street"
               placeholder="Calle"
-              {...register('street')}
+              {...register('address.street')}
             /> 
             <input 
               type="text" 
-              id="adress" 
+              id="address" 
               name="city"
               placeholder="Ciudad"
-              {...register('city')}
+              {...register('address.city')}
             />
             <input 
               type="text" 
-              id="adress" 
+              id="address" 
               name="region"
               placeholder="C. Autónoma"
-              {...register('region')}
+              {...register('address.region')}
             /> 
             <input 
             type="text" 
-            id="adress" 
+            id="address" 
             name="postalCode"
             placeholder="Código Postal"
-            {...register('postalCode')}
+            {...register('address.postalCode')}
             /> 
         </div>
         <div className="container-phone">
           <label htmlFor="telephone">Teléfono</label>
           <input 
             type="text" 
-            id="adress" 
-            name="postalCode"
-            placeholder="Código Postal"
-            {...register('postalCode')}
+            id="telephone" 
+            name="telephone"
+            placeholder="Teléfono"
+            {...register('telephone')}
             /> 
         </div>
+        <div className="container-dni">
+          <label htmlFor="dni">DNI</label>
+          <input 
+            type="text" 
+            id="dni" 
+            name="dni"
+            placeholder="DNI"
+            {...register('dni')}
+            /> 
+        </div>
+        <div className="container-email">
+          <label htmlFor="email">E-mail</label>
+          <input 
+            type="text" 
+            id="email" 
+            name="email"
+            placeholder="E-mail"
+            {...register('email')}
+            /> 
+        </div>
+        <div className="container-pwd">
+          <label htmlFor="pwd">Contraseña</label>
+          <input 
+            type="password" 
+            id="pwd" 
+            name="pwd"
+            placeholder="Contraseña"
+            {...register('password')}
+            /> 
+        </div>
+        <button type="submit" onClick={formSubmit}>Registrar</button>
       </form>
     </main>
   );
