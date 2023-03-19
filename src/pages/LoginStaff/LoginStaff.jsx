@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
 import { NeovetContext } from '../../context/neovetContext';
 import { API } from '../../services/API';
+import Button from '../../UI/Button';
 import('./LoginStaff.css');
 
 const LoginStaff = () => {
@@ -67,7 +68,7 @@ const LoginStaff = () => {
             )}
           </button>
         </div>
-        <button type="submit">Login</button>
+        <Button padding="lg" text="Login" type="submit" />
       </form>
       {errorEmptyfield !== null && <h2>{errorEmptyfield}</h2>}
       {otherError !== null && (

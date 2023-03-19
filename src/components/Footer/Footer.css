@@ -1,10 +1,13 @@
 .footer {
   height: auto;
-  margin: 1rem 4rem;
+  padding: 2rem 4rem;
   color: var(--highlightcolor);
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  background-color: var(--secondarycolor);
+  color: var(--primarycolor);
+  opacity: 90%;
 }
 
 .footerBody {
@@ -13,4 +16,23 @@
   align-items: flex-start;
   flex-wrap: wrap;
   gap: 2rem;
+}
+
+.pages > li > a:hover {
+  color: var(--highlightcolor);
+  transition: 0.3s all ease-in-out;
+}
+
+.corporative > p > a:hover {
+  color: var(--highlightcolor);
+  transition: 0.3s all ease-in-out;
+}
+
+.footerBody > div > a:hover {
+  color: var(--highlightcolor);
+  transition: 0.3s all ease-in-out;
+}
+
+.footerBody > div > h2 {
+  color: var(--highlightcolor);
 }

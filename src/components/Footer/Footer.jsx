@@ -1,6 +1,6 @@
 import './Footer.css';
 
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import { API } from '../../services/API';
@@ -36,7 +36,11 @@ const Footer = () => {
           <li>
             <NavLink to="/editprofile">Profile</NavLink>
           </li>
-          <button> Solicitud de registro </button>
+          <li>
+            <NavLink href="#formulario" to="/">
+              Registro
+            </NavLink>
+          </li>
         </ul>
         {loaded ? (
           clinics.map((clinic) => (
