@@ -1,4 +1,20 @@
+
 .footer{
     height: auto;
-    
+    margin: 1rem 4rem;
+    color: var(--highlightcolor);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
 }
+
+.footerBody{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+

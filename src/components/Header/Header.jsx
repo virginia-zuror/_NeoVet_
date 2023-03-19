@@ -1,25 +1,54 @@
 import './Header.css';
 
 import { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import { NeovetContext } from '../../context/neovetContext';
 
 const Header = () => {
   const { logout, user } = useContext(NeovetContext);
+  let navigate = useNavigate();
+  let selection;
+
+  const loginSelected = () => {
+    console.log(selection);
+    if (selection == 'loginstaff') {
+      navigate('/loginstaff');
+    } else if (selection == 'loginclients') {
+      navigate('/loginclientes');
+    }
+  };
+
   return (
     <div className="header">
-      <h2>Logo</h2>
+      <abbr title="Home">
+        <h2>Logo</h2>
+      </abbr>
       <ul className="links">
         <li>
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/loginstaff">Login Staff</NavLink>
+          <select
+            defaultValue="default "
+            name="loginSelect"
+            onChange={(e) => {
+              selection = e.target.value;
+              loginSelected();
+            }}
+          >
+            <option value="default">Logéate</option>
+            <option value="loginstaff">Login Staff</option>
+            <option value="loginclients">Login Clientes</option>
+          </select>
         </li>
         <li>
-          <NavLink to="/loginclientes">Login Clientes</NavLink>
+          <NavLink to="/staff">Staff</NavLink>
         </li>
+        <li>
+          <NavLink to="/userclients">Cliente</NavLink>
+        </li>
+
         <li>
           <button to="/" onClick={logout}>
             Logout
