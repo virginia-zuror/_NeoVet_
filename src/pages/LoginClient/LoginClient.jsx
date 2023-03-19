@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import('./LoginClient.css');
-
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import { NeovetContext } from '../../context/neovetContext';
 import { API } from '../../services/API';
+import Button from '../../UI/Button';
 
 const LoginClient = () => {
   const { register, handleSubmit } = useForm();
@@ -67,7 +67,8 @@ const LoginClient = () => {
             )}
           </button>
         </div>
-        <button type="submit">Login</button>
+        <Button padding="lg" text="Login" type="submit" />
+        <NavLink to="/">¿Aún no estás registradx?</NavLink>
       </form>
       {errorEmptyfield !== null && <h2>{errorEmptyfield}</h2>}
       {otherError !== null && (
