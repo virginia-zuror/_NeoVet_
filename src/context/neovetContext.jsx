@@ -1,8 +1,10 @@
 import { createContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export const NeovetContext = createContext();
 
 const NeovetContextProvider = ({ children }) => {
+  let navigate = useNavigate();
   const [user, setUser] = useState(() => {
     const savedUser = localStorage.getItem('user');
     const initialValue = JSON.parse(savedUser);
@@ -19,6 +21,7 @@ const NeovetContextProvider = ({ children }) => {
     setJwt(null);
     localStorage.removeItem('user');
     localStorage.removeItem('token');
+    navigate('/');
   };
 
   const login = (resUser, resToken) => {
