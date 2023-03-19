@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -14,4 +16,11 @@ html{
 body{
   width:100vw;
   height: auto;
+}
+
+:root {
+  --primarycolor: whitesmoke;
+  --secondarycolor: rgb(60, 55, 53);
+  --highlightcolor: rgb(74, 153, 187);
+  font-family: 'VAG Rounded Std', 'Varela Round', sans-serif;
 }
