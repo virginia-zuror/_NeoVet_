@@ -2,7 +2,6 @@ import './Home.css';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
-
 import { NeovetContext } from '../../context/neovetContext';
 import { API } from '../../services/API.js';
 
