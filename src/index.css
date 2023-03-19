@@ -9,12 +9,12 @@
   color: inherit;
 }
 
-html{
+html {
   scroll-behavior: smooth;
 }
 
-body{
-  width:100vw;
+body {
+  width: 100vw;
   height: auto;
 }
 

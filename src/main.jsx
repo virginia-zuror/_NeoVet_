@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import App from './App';
+import RequiredAuthClient from './components/RequiredAuth/RequiredAuthClient';
+import RequiredAuthStaff from './components/RequiredAuth/RequiredAuthStaff';
 import NeovetContextProvider from './context/neovetContext';
 import EditClientProfile from './pages/EditClientProfile/EditClientProfile';
 import Home from './pages/Home/Home';
@@ -24,10 +26,38 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route index element={<Home />} />
             <Route path="/loginstaff" element={<LoginStaff />} />
             <Route path="/loginclientes" element={<LoginClient />} />
-            <Route path="/pets" element={<Pets />} />
-            <Route path="/staff" element={<Staff />} />
-            <Route path="/userclients" element={<UserClients />} />
-            <Route path="/editprofile" element={<EditClientProfile />} />
+            <Route
+              path="/pets"
+              element={
+                <RequiredAuthClient>
+                  <Pets />
+                </RequiredAuthClient>
+              }
+            />
+            <Route
+              path="/staff"
+              element={
+                <RequiredAuthStaff>
+                  <Staff />
+                </RequiredAuthStaff>
+              }
+            />
+            <Route
+              path="/userclients"
+              element={
+                <RequiredAuthClient>
+                  <UserClients />
+                </RequiredAuthClient>
+              }
+            />
+            <Route
+              path="/editprofile"
+              element={
+                <RequiredAuthClient>
+                  <EditClientProfile />
+                </RequiredAuthClient>
+              }
+            />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
