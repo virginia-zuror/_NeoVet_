@@ -1,11 +1,11 @@
 import './Home.css';
 
-import { useContext, useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 
-import { NeovetContext } from '../../context/neovetContext';
 import { API } from '../../services/API.js';
+import Button from '../../UI/Button';
 
 const Home = () => {
   const { register, handleSubmit } = useForm();
@@ -17,127 +17,113 @@ const Home = () => {
     });
   };
 
-  return (
-    <main>
-      <h2>Formulario de registro</h2>
-      <form onSubmit={handleSubmit(formSubmit)} id="formulario">
-        <div className="container-name">
-          <label htmlFor="name">Nombre</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Nombre"
-            {...register('name')}
-          />
-        </div>
-        <div className="container-address">
-          <label htmlFor="address">Dirección</label>
+  const [shown, setShown] = useState(false);
+  const switchShown = () => setShown(!shown);
+  const onChange = ({ currentTarget }) => currentTarget.value;
 
+  return (
+    <main id="home">
+      <h2>Formulario de registro</h2>
+      <form onSubmit={handleSubmit(formSubmit)} id="register-form">
+        <div className="container container-name">
+          <input type="text" id="name" name="name" required="on" {...register('name')} />
+          <label htmlFor="name">Nombre</label>
+        </div>
+        <div className="container container-street">
           <input
             type="text"
-            id="address"
+            id="street"
             name="street"
-            placeholder="Calle"
+            required="on"
             {...register('address.street')}
           />
+          <label htmlFor="street">Calle</label>
+        </div>
+        <div className="container container-city">
           <input
             type="text"
-            id="address"
+            id="city"
             name="city"
-            placeholder="Ciudad"
+            required="on"
             {...register('address.city')}
           />
+          <label htmlFor="city">Ciudad</label>
+        </div>
+        <div className="container container-region">
           <input
             type="text"
-            id="address"
+            id="region"
             name="region"
-            placeholder="C. Autónoma"
+            required="on"
             {...register('address.region')}
           />
+          <label htmlFor="region">C.Autónoma</label>
+        </div>
+        <div className="container container-postalcode">
           <input
             type="text"
-            id="address"
+            id="postalCode"
             name="postalCode"
-            placeholder="Código Postal"
+            required="on"
             {...register('address.postalCode')}
           />
+          <label htmlFor="postalCode">Código Postal</label>
         </div>
-        <div className="container-phone">
-          <label htmlFor="telephone">Teléfono</label>
+        <div className="container container-phone">
           <input
             type="text"
             id="telephone"
             name="telephone"
-            placeholder="Teléfono"
+            required="on"
             {...register('telephone')}
           />
+          <label htmlFor="telephone">Teléfono</label>
         </div>
-        <div className="container-dni">
+        <div className="container container-dni">
+          <input type="text" id="dni" name="dni" required="on" {...register('dni')} />
           <label htmlFor="dni">DNI</label>
-          <input type="text" id="dni" name="dni" placeholder="DNI" {...register('dni')} />
         </div>
-        <div className="container-email">
-          <label htmlFor="email">E-mail</label>
+        <div className="container container-email">
           <input
             type="text"
             id="email"
             name="email"
-            placeholder="E-mail"
+            required="on"
             {...register('email')}
           />
+          <label htmlFor="email">E-mail</label>
         </div>
-        <div className="container-pwd">
-          <label htmlFor="pwd">Contraseña</label>
+        <div className="container container-pwd">
           <input
-            type="password"
+            type={shown ? 'text' : 'password'}
+            onChange={onChange}
             id="pwd"
             name="pwd"
-            placeholder="Contraseña"
+            required="on"
             {...register('password')}
           />
-          <input
-            type="text"
-            id="adress"
-            name="street"
-            placeholder="Calle"
-            {...register('street')}
-          />
-          <input
-            type="text"
-            id="adress"
-            name="city"
-            placeholder="Ciudad"
-            {...register('city')}
-          />
-          <input
-            type="text"
-            id="adress"
-            name="region"
-            placeholder="C. Autónoma"
-            {...register('region')}
-          />
-          <input
-            type="text"
-            id="adress"
-            name="postalCode"
-            placeholder="Código Postal"
-            {...register('postalCode')}
-          />
+          <label htmlFor="pwd">Contraseña</label>
+          <button type="button" onClick={switchShown} className="pass_visual">
+            {!shown ? (
+              <img
+                src="https://res.cloudinary.com/dbumm5v2e/image/upload/v1679167363/9206607_zqbsmv.png"
+                alt="Ocultar"
+              />
+            ) : (
+              <img
+                src="https://res.cloudinary.com/dbumm5v2e/image/upload/v1679167348/3495857_pc77ht.png"
+                alt="Mostrar"
+              />
+            )}
+          </button>
         </div>
-        <div className="container-phone">
-          <label htmlFor="telephone">Teléfono</label>
-          <input
-            type="text"
-            id="adress"
-            name="postalCode"
-            placeholder="Código Postal"
-            {...register('postalCode')}
-          />
-        </div>
-        <button type="submit" onClick={formSubmit}>
-          Registrar
-        </button>
+        <Button
+          text="Regístrate"
+          type="submit"
+          onClick={formSubmit}
+          padding="lg"
+          variant="contained"
+        />
       </form>
     </main>
   );

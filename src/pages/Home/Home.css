@@ -1,0 +1,44 @@
+#home {
+  color: var(--secondarycolor);
+}
+
+.container {
+  position: relative;
+}
+
+.container input {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 1px solid rgba(47, 47, 47, 0.415);
+  border-radius: 12px;
+  width: 12rem;
+  height: 2.8rem;
+}
+
+.container label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.container > input:focus ~ label,
+input:valid ~ label {
+  transform: translateY(-50%) scale(0.9);
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: white;
+}
+
+.container input:focus,
+input:valid {
+  border: 2px solid var(--highlightcolor);
+}
+
+.container-pwd {
+  display: flex;
+}
