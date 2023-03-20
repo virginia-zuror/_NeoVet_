@@ -1,19 +1,37 @@
 .grid-pets > figure > img {
-  width: 20vw;
-  height: 30vh;
+  width: 10vw;
+  height: 15vh;
   border-radius: 50%;
   object-fit: cover;
 }
 
 .grid-pets {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 2rem;
 }
 
-.grid-pets > figure > div {
+.info-pet {
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grid-pets > figure {
+    display: flex;
+    gap: 10rem;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--primarycolor);
+    color: var(--highlightcolor);
     justify-content: space-between;
-  }
+}
+
+.pet-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
   
