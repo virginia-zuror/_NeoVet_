@@ -3,6 +3,7 @@ import './UserClients.css';
 import PetCard from '../../components/PetCard/PetCard';
 import { API } from '../../services/API';
 import { useState } from 'react';
+import AsideClient from '../../components/AsideClient/AsideClient';
 
 const UserClients = () => {
   const [user, setUser] = useState([]);
@@ -16,7 +17,10 @@ const UserClients = () => {
     });
   };
   getPets();
-  return <main></main>;
+  return <div>
+    <AsideClient/>
+    <main>Perfil cliente</main>
+    </div>;
 };
 
 export default UserClients;
