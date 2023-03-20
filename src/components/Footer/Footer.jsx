@@ -11,7 +11,6 @@ const Footer = () => {
 
   const getClinics = () => {
     API.get('/admins').then((res) => {
-      console.log(res);
       setClinics(res.data);
       setLoaded(true);
     });
