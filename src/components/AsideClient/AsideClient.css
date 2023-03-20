@@ -1,27 +1,39 @@
-.aside {
-  width: 200px;
-  height: 65vh;
-  display: flex;
-  flex-direction: row;
-  border: 1px solid var(--highlightcolor);
-  border-radius: 4px;
-  padding: 1rem 2rem;
-  margin: 2rem 0;
-  justify-content: center;
-  position: absolute;
-  left: 2%;
+.aside{
+    width: 14vw;
+    min-width: 200px;
+    height: 65vh;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--highlightcolor);
+    border-radius: 4px;
+    padding: 1rem 2rem;
+    margin: 2rem 0;
+    justify-content: center;
+    position: absolute;
+    left: 2%;
 }
 
-.asideLinks > li > a {
-  color: var(--secondarycolor);
-  filter: invert(51%) sepia(77%) saturate(305%) hue-rotate(153deg) brightness(92%)
-    contrast(92%);
+.asideMobile{
+  display: none;
+  width: 20px;
 }
-.asideLinks {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+
+.asideMobileLinks > li >a{
+  color: var(--secondarycolor);
+  filter: invert(51%) sepia(77%) saturate(305%) hue-rotate(153deg) brightness(92%) contrast(92%);
+}
+
+
+.asideLinks > li >a{
+    color: var(--secondarycolor);
+    filter: invert(51%) sepia(77%) saturate(305%) hue-rotate(153deg) brightness(92%) contrast(92%);
+}
+
+.asideLinks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
 }
 
 .icon {
@@ -41,7 +53,42 @@
   filter: none;
 }
 
-.asideLinks > li > a > img:hover {
-  transition: 0.3s all ease-in-out;
-  filter: none;
-}
+  .asideContainer {
+    display: flex;
+  }
+
+  .asideLinks >  li > .active{
+    border-bottom: 2px solid var(--highlightcolor);
+  }
+
+  @media screen and (max-width: 600px){
+    .aside{
+      display: none;
+    }
+    .asideMobile{
+      width: 100vw;
+      display:flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .asideMobileLinks{
+      display: flex;
+      gap: 2rem;
+    }
+
+    .icon{
+      width: 50px;
+      margin: 1rem 0;
+    }
+
+    .asideMobileLinks > li >a:hover{
+      color: var(--secondarycolor);
+      font-size: medium;
+      transition: 0.3s all ease-in-out;
+      filter:none;
+    }
+
+
+  }
+
