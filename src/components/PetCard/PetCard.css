@@ -1,0 +1,19 @@
+.grid-pets > figure > img {
+  width: 20vw;
+  height: 30vh;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.grid-pets {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-pets > figure > div {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+  }
+  
