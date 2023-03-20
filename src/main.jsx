@@ -16,6 +16,8 @@ import NotFound from './pages/NotFound/NotFound';
 import Pets from './pages/Pets/Pets';
 import Staff from './pages/Staff/Staff';
 import UserClients from './pages/UserClients/UserClients';
+import StaffAgenda from './pages/StaffAgenda/StaffAgenda';
+import userClientsAgenda from './pages/userClientsAgenda/userClientsAgenda';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -27,7 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/loginstaff" element={<LoginStaff />} />
             <Route path="/loginclientes" element={<LoginClient />} />
             <Route
-              path="/pets"
+              path="/staff/pets"
               element={
                 <RequiredAuthClient>
                   <Pets />
@@ -43,6 +45,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               }
             />
             <Route
+              path="/staff/agenda"
+              element={
+                <RequiredAuthStaff>
+                  <StaffAgenda />
+                </RequiredAuthStaff>
+              }
+            /> 
+                       
+            <Route
               path="/userclients"
               element={
                 <RequiredAuthClient>
@@ -50,6 +61,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 </RequiredAuthClient>
               }
             />
+            <Route
+              path="/userclients/agenda"
+              element={
+                <RequiredAuthClient>
+                  <userClientsAgenda />
+                </RequiredAuthClient>
+              }
+            />            
             <Route
               path="/editprofile"
               element={
