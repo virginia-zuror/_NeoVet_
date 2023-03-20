@@ -1,14 +1,13 @@
 import React from 'react'
-import "./UserClientsAgenda.css"
 import AsideClient from '../../components/AsideClient/AsideClient'
 
-const UserClientsAgenda = () => {
+const UserClientsStaff = () => {
   return (
     <div>
     <AsideClient/>
-    <main>userClientsAgenda</main>
+    <main>userClientsStaff</main>
     </div>
   )
 }
 
-export default UserClientsAgenda
+export default UserClientsStaff
