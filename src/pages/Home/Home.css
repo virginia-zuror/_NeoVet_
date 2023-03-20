@@ -2,11 +2,36 @@
   color: var(--secondarycolor);
 }
 
+.flex__container {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.content--left {
+  align-items: center;
+  width: 50%;
+  position: relative;
+}
+
+.content--left img {
+  position: relative;
+  height: 500px;
+  width: 500px;
+}
+
+#formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .container {
   position: relative;
 }
 
-input {
+input,
+select {
   font-size: 100%;
   padding: 0.8em;
   outline: none;
@@ -26,6 +51,8 @@ label {
   transition: all 0.3s ease;
 }
 
+select:focus ~ label,
+select:valid ~ label,
 input:focus ~ label,
 input:valid ~ label {
   transform: translateY(-50%) scale(0.9);
@@ -34,11 +61,13 @@ input:valid ~ label {
   background-color: white;
 }
 
+select:focus,
+select:valid,
 input:focus,
 input:valid {
   border: 2px solid var(--highlightcolor);
 }
 
 .container-pwd {
-  display: flex;
+  position: relative;
 }

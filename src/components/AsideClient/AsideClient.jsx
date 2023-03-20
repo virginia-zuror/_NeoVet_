@@ -1,11 +1,13 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import "./AsideClient.css"
+import './AsideClient.css';
+
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const AsideClient = () => {
   return (
     <div className="asideContainer">
     <div className="aside">
+
     <ul className="asideLinks">
       <li>
         <NavLink to="/userclients">Vista General <img className="icon" src="https://res.cloudinary.com/ddu2qdsdp/image/upload/v1679307394/Neovet/person-circle-outline_yyfflv.svg" alt="icono agenda"/></NavLink>
@@ -36,4 +38,5 @@ const AsideClient = () => {
   )
 }
 
-export default AsideClient
+
+export default AsideClient;

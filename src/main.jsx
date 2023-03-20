@@ -15,8 +15,8 @@ import LoginStaff from './pages/LoginStaff/LoginStaff';
 import NotFound from './pages/NotFound/NotFound';
 import Pets from './pages/Pets/Pets';
 import Staff from './pages/Staff/Staff';
-import UserClients from './pages/UserClients/UserClients';
 import StaffAgenda from './pages/StaffAgenda/StaffAgenda';
+import UserClients from './pages/UserClients/UserClients';
 import UserClientsAgenda from './pages/UserClientsAgenda/UserClientsAgenda';
 import UserClientsStaff from './pages/UserClientsStaff/UserClientsStaff';
 
@@ -52,8 +52,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   <StaffAgenda />
                 </RequiredAuthStaff>
               }
-            /> 
-                       
+            />
+
             <Route
               path="/userclients"
               element={
@@ -66,19 +66,18 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               path="/userclients_agenda"
               element={
                 <RequiredAuthClient>
-                  <UserClientsAgenda/>
+                  <UserClientsAgenda />
                 </RequiredAuthClient>
               }
-            />    
+            />
             <Route
               path="/userclients_staff"
               element={
                 <RequiredAuthClient>
-                  <UserClientsStaff/>
+                  <UserClientsStaff />
                 </RequiredAuthClient>
               }
-            />              
-                    
+            />
             <Route
               path="/editprofile"
               element={

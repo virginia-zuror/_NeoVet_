@@ -36,28 +36,22 @@
     gap: 1rem;
 }
 
-.icon{
-    margin: 0 0.5rem;
-    width: 16px;
-    height: auto;
-
+.icon {
+  margin: 0 0.5rem;
+  width: 16px;
+  height: auto;
 }
 
-.aside:hover{
-    filter:none;
+.aside:hover {
+  filter: none;
 }
 
-.asideLinks > li >a:hover{
-    color: var(--secondarycolor);
-    font-size: medium;
-    transition: 0.3s all ease-in-out;
-    filter:none;
-  }
-  
-  .asideLinks > li >a > img:hover {
-    transition: 0.3s all ease-in-out;
-    filter:none;
-  }
+.asideLinks > li > a:hover {
+  color: var(--secondarycolor);
+  font-size: medium;
+  transition: 0.3s all ease-in-out;
+  filter: none;
+}
 
   .asideContainer {
     display: flex;
@@ -97,3 +91,4 @@
 
 
   }
+
