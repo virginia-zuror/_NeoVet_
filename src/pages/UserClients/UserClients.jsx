@@ -1,11 +1,22 @@
 import './UserClients.css';
 
+import PetCard from '../../components/PetCard/PetCard';
+import { API } from '../../services/API';
+import { useState } from 'react';
+
 const UserClients = () => {
-  return (
-    <main>
-      <h2>UserClients</h2>
-    </main>
-  );
+  const [user, setUser] = useState([]);
+  const [pets, setPets] = useState([]);
+  const userLoged = JSON.parse(localStorage.getItem('user'));
+  const getPets = () => {
+    API.get('/userclients').then((res) => {
+      const allUsers = res.data;
+      allUsers.map((user) => user._id === userLoged._id && setUser(user));
+      setPets(user.pets);
+    });
+  };
+  getPets();
+  return <main></main>;
 };
 
 export default UserClients;
