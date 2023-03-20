@@ -17,7 +17,8 @@ import Pets from './pages/Pets/Pets';
 import Staff from './pages/Staff/Staff';
 import UserClients from './pages/UserClients/UserClients';
 import StaffAgenda from './pages/StaffAgenda/StaffAgenda';
-import userClientsAgenda from './pages/userClientsAgenda/userClientsAgenda';
+import UserClientsAgenda from './pages/UserClientsAgenda/UserClientsAgenda';
+import UserClientsStaff from './pages/UserClientsStaff/UserClientsStaff';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -31,9 +32,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route
               path="/staff/pets"
               element={
-                <RequiredAuthClient>
+                <RequiredAuthStaff>
                   <Pets />
-                </RequiredAuthClient>
+                </RequiredAuthStaff>
               }
             />
             <Route
@@ -65,7 +66,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               path="/userclients/agenda"
               element={
                 <RequiredAuthClient>
-                  <userClientsAgenda />
+                  <UserClientsAgenda/>
+                </RequiredAuthClient>
+              }
+            />    
+            <Route
+              path="/userclients/staff"
+              element={
+                <RequiredAuthClient>
+                  <UserClientsStaff/>
                 </RequiredAuthClient>
               }
             />
