@@ -1,49 +1,47 @@
-.aside{
-    width: 200px;
-    height: 65vh;
-    display: flex;
-    flex-direction: row;
-    border: 1px solid var(--highlightcolor);
-    border-radius: 4px;
-    padding: 1rem 2rem;
-    margin: 2rem 0;
-    justify-content: center;
-    position: absolute;
-    left: 2%;
+.aside {
+  width: 200px;
+  height: 65vh;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid var(--highlightcolor);
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  margin: 2rem 0;
+  justify-content: center;
+  position: absolute;
+  left: 2%;
 }
 
-.asideLinks > li >a{
-    color: var(--secondarycolor);
-    filter: invert(51%) sepia(77%) saturate(305%) hue-rotate(153deg) brightness(92%) contrast(92%);
+.asideLinks > li > a {
+  color: var(--secondarycolor);
+  filter: invert(51%) sepia(77%) saturate(305%) hue-rotate(153deg) brightness(92%)
+    contrast(92%);
 }
-.asideLinks{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-.icon{
-    margin: 0 0.5rem;
-    width: 16px;
-    height: auto;
-
+.asideLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
-.aside:hover{
-    filter:none;
+.icon {
+  margin: 0 0.5rem;
+  width: 16px;
+  height: auto;
 }
 
-.asideLinks > li >a:hover{
-    color: var(--secondarycolor);
-    font-size: medium;
-    transition: 0.3s all ease-in-out;
-    filter:none;
-  }
-  
-  .asideLinks > li >a > img:hover {
-    transition: 0.3s all ease-in-out;
-    filter:none;
-  }
+.aside:hover {
+  filter: none;
+}
 
-  
+.asideLinks > li > a:hover {
+  color: var(--secondarycolor);
+  font-size: medium;
+  transition: 0.3s all ease-in-out;
+  filter: none;
+}
+
+.asideLinks > li > a > img:hover {
+  transition: 0.3s all ease-in-out;
+  filter: none;
+}
