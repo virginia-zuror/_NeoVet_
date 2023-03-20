@@ -1,6 +1,7 @@
+import './AsideClient.css';
+
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './AsideClient.css';
 
 const AsideClient = () => {
   return (

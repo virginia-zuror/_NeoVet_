@@ -1,6 +1,8 @@
 import './UserClients.css';
 
+
 import { useEffect, useState } from 'react';
+
 
 import AsideClient from '../../components/AsideClient/AsideClient';
 import PetCard from '../../components/PetCard/PetCard';
@@ -36,6 +38,12 @@ const UserClients = () => {
           <h2>Loading...</h2>
         )}
       </main>
+
+  getPets();
+  return (
+    <div>
+      <AsideClient />
+      <main>Perfil cliente</main>
     </div>
   );
 };
