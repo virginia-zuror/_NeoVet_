@@ -40,19 +40,26 @@ const LoginClient = () => {
     <main>
       <h2>Login Clientes</h2>
       <form onSubmit={handleSubmit(formSubmit)}>
-        <div className="email">
-          <label htmlFor="email">email</label>
-          <input type="text" id="email" name="email" {...register('email')} />
+        <div className="container">
+          <input
+            type="text"
+            id="email"
+            name="email"
+            required="on"
+            {...register('email')}
+          />
+          <label htmlFor="email">E-mail</label>
         </div>
-        <div className="pass">
-          <label htmlFor="password">Password</label>
+        <div className="container">
           <input
             type={shown ? 'text' : 'password'}
             onChange={onChange}
             id="password"
             name="password"
+            required="on"
             {...register('password')}
           />
+          <label htmlFor="pwd">Contraseña</label>
           <button type="button" onClick={switchShown} className="pass_visual">
             {!shown ? (
               <img

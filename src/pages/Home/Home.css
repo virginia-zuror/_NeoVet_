@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.container input {
+input {
   font-size: 100%;
   padding: 0.8em;
   outline: none;
@@ -16,7 +16,7 @@
   height: 2.8rem;
 }
 
-.container label {
+label {
   font-size: 100%;
   position: absolute;
   left: 0;
@@ -26,7 +26,7 @@
   transition: all 0.3s ease;
 }
 
-.container > input:focus ~ label,
+input:focus ~ label,
 input:valid ~ label {
   transform: translateY(-50%) scale(0.9);
   margin-left: 1.3em;
@@ -34,7 +34,7 @@ input:valid ~ label {
   background-color: white;
 }
 
-.container input:focus,
+input:focus,
 input:valid {
   border: 2px solid var(--highlightcolor);
 }

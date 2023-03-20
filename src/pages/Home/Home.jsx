@@ -1,7 +1,6 @@
 import './Home.css';
 
 import { useState } from 'react';
-
 import { useForm } from 'react-hook-form';
 
 import { API } from '../../services/API.js';
