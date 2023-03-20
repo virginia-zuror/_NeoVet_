@@ -35,17 +35,36 @@ const Home = () => {
 
   return (
     <main id="home">
-      <div className="flex__container">
-        <div className="content--left"></div>
-        <div className="content--rigth">
-          <h2>Formulario de registro</h2>
+      <section className="hero-section">
+        <div className="hero-text-container">
+          <h1 className="hero-text-head">
+            Lorem fistrum 
+          </h1>
+          <h3 className="hero-text-description">
+          pecador pecador está la cosa muy malar hasta luego Lucas pecador pecador está la cosa muy malar hasta luego Lucas
+          </h3>
+          <div className="bar"></div>
+          <Button
+              text="Regístrate"
+              type="submit"
+              onClick={formSubmit}
+              padding="lg"
+              variant="contained"
+            />
+        </div>
+        <div className="hero-illustration-container">
+          <img src="https://res.cloudinary.com/dbumm5v2e/image/upload/v1679339852/neovetdrawing_d2if02.png" alt="Chica con perro y gato"></img>
+        </div>
+      </section>
+      <section className="register-section">
+          <h2>Crea tu cuenta aquí y lorem fistrum pecador pecador!</h2>
           <form onSubmit={handleSubmit(formSubmit)} id="formulario">
             <div className="container container-name">
               <input
                 type="text"
                 id="name"
                 name="name"
-                required="on"
+                required
                 {...register('name')}
               />
               <label htmlFor="name">Nombre</label>
@@ -55,7 +74,7 @@ const Home = () => {
                 type="text"
                 id="street"
                 name="street"
-                required="on"
+                required
                 {...register('address.street')}
               />
               <label htmlFor="street">Calle</label>
@@ -65,7 +84,7 @@ const Home = () => {
                 type="text"
                 id="city"
                 name="city"
-                required="on"
+                required
                 {...register('address.city')}
               />
               <label htmlFor="city">Ciudad</label>
@@ -75,7 +94,7 @@ const Home = () => {
                 type="text"
                 id="region"
                 name="region"
-                required="on"
+                required
                 {...register('address.region')}
               />
               <label htmlFor="region">C.Autónoma</label>
@@ -85,7 +104,7 @@ const Home = () => {
                 type="text"
                 id="postalCode"
                 name="postalCode"
-                required="on"
+                required
                 {...register('address.postalCode')}
               />
               <label htmlFor="postalCode">Código Postal</label>
@@ -95,7 +114,7 @@ const Home = () => {
                 type="text"
                 id="telephone"
                 name="telephone"
-                required="on"
+                required
                 {...register('telephone')}
               />
               <label htmlFor="telephone">Teléfono</label>
@@ -109,17 +128,17 @@ const Home = () => {
                 type="text"
                 id="email"
                 name="email"
-                required="on"
+                required
                 {...register('email')}
               />
               <label htmlFor="email">E-mail</label>
             </div>
             <div className="container container-admins">
-              <select name="admins" id="admins">
+              <select name="admins" id="admins" defaultValue="nothing">
                 <option value="nothing"></option>
                 {loaded ? (
                   admins.map((admin) => (
-                    <option required="on" key={admin._id} value={admin.business}>
+                    <option key={admin._id} value={admin.business}>
                       {admin.business}
                     </option>
                   ))
@@ -158,11 +177,10 @@ const Home = () => {
               type="submit"
               onClick={formSubmit}
               padding="lg"
-              variant="contained"
             />
           </form>
-        </div>
-      </div>
+        
+      </section>
     </main>
   );
 };
