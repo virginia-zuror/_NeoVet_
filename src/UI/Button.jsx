@@ -6,7 +6,6 @@ const ButtonStyled = styled.button`
   border: ${({ variant }) =>
     variant === 'text' ? 'none' : `1px solid rgb(74, 153, 187)`};
   border-radius: 10px;
-  width: fit-content;
   font-family: 'VAG Rounded Std', 'Varela Round', sans-serif;
   font-size: ${({ size }) =>
     size === 'xl' ? '1.2rem' : size === 'lg' ? '0.8rem' : size === 'md' && '0.60rem'};

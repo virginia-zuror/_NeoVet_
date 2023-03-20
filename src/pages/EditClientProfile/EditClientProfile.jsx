@@ -11,6 +11,7 @@ const EditClientProfile = () => {
   const { register, handleSubmit } = useForm();
   const userLoged = JSON.parse(localStorage.getItem('user'));
   const [clkSave, setClkSave] = useState(false);
+  const [submited, setSubmited] = useState(false);
 
   const checking = () => {
     setClkSave(!clkSave);
@@ -19,6 +20,7 @@ const EditClientProfile = () => {
   const formSubmit = (formData) => {
     API.patch(`/userclients/${userLoged._id}`, formData).then((res) => {
       console.log(res.data);
+      setSubmited(true);
     });
   };
 
@@ -81,11 +83,10 @@ const EditClientProfile = () => {
             checking();
           }}
           padding="xl"
-          variant="contained"
           className="btn_edit"
         />
       </form>
-      {clkSave && (
+      {submited && clkSave && (
         <Modal
           content="Cambios realizados"
           action={() => checking()}

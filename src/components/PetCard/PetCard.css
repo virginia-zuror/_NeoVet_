@@ -18,18 +18,3 @@
   align-items: center;
 }
 
-.grid-pets > figure {
-  display: flex;
-  gap: 10rem;
-  padding: 1rem;
-  border-radius: 5px;
-  background-color: var(--primarycolor);
-  color: var(--highlightcolor);
-  justify-content: space-between;
-}
-
-.pet-buttons {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-}
