@@ -8,6 +8,7 @@ import App from './App';
 import RequiredAuthClient from './components/RequiredAuth/RequiredAuthClient';
 import RequiredAuthStaff from './components/RequiredAuth/RequiredAuthStaff';
 import NeovetContextProvider from './context/neovetContext';
+import CreatePet from './pages/CreatePet/CreatePet';
 import EditClientProfile from './pages/EditClientProfile/EditClientProfile';
 import Home from './pages/Home/Home';
 import LoginClient from './pages/LoginClient/LoginClient';
@@ -59,6 +60,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               element={
                 <RequiredAuthClient>
                   <UserClients />
+                </RequiredAuthClient>
+              }
+            />
+            <Route
+              path="/userclients_createpet"
+              element={
+                <RequiredAuthClient>
+                  <CreatePet />
                 </RequiredAuthClient>
               }
             />
