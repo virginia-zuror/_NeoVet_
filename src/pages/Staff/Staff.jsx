@@ -1,10 +1,11 @@
 import './Staff.css';
-import AsideStaff from '../../components/AsideStaff/AsideStaff'
+
+import AsideStaff from '../../components/AsideStaff/AsideStaff';
 
 const Staff = () => {
   return (
     <div>
-      <AsideStaff/>
+      <AsideStaff />
       <main>Staff</main>
     </div>
   );

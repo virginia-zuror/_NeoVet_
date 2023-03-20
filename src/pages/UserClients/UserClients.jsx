@@ -1,9 +1,10 @@
 import './UserClients.css';
 
+import { useState } from 'react';
+
+import AsideClient from '../../components/AsideClient/AsideClient';
 import PetCard from '../../components/PetCard/PetCard';
 import { API } from '../../services/API';
-import { useState } from 'react';
-import AsideClient from '../../components/AsideClient/AsideClient';
 
 const UserClients = () => {
   const [user, setUser] = useState([]);
@@ -17,10 +18,12 @@ const UserClients = () => {
     });
   };
   getPets();
-  return <div>
-    <AsideClient/>
-    <main>Perfil cliente</main>
-    </div>;
+  return (
+    <div>
+      <AsideClient />
+      <main>Perfil cliente</main>
+    </div>
+  );
 };
 
 export default UserClients;
