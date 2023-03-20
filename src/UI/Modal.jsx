@@ -12,6 +12,12 @@ const Overlay = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(60, 55, 53, 45%);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
 `;
 
 const ModalContent = styled.div`
@@ -26,16 +32,17 @@ const ModalContent = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem;
+  padding: 3rem;
   button {
     position: absolute;
     top: 1%;
-    right: 1%;
-    width: 30px;
+    right: 0.5%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    margin-right: 0.5rem;
   }
   @media (max-width: 768px) {
     font-size: 0.6rem;

@@ -20,9 +20,9 @@ const Pets = () => {
   };
 
   const filterFunction = (value) => {
-    const petFilter = pets.filter((pet) => pet.name.toLowerCase().includes(value))
+    const petFilter = pets.filter((pet) => pet.name.toLowerCase().includes(value));
     setFilter(petFilter);
-  }
+  };
 
   useEffect(() => {
     getPets();
@@ -33,11 +33,12 @@ const Pets = () => {
       <AsideStaff />
       <h2>Pets</h2>
       <input
-      type="text"
-      placeholder="Buscar"
-      onChange={(ev) => {
-        filterFunction(ev.target.value.toLowerCase());
-      }}/>
+        type="text"
+        placeholder="Buscar"
+        onChange={(ev) => {
+          filterFunction(ev.target.value.toLowerCase());
+        }}
+      />
       <div className="grid-pets">
         {loaded ? (
           filter.map((pet) => <PetCard pet={pet} key={pet.chip} />)

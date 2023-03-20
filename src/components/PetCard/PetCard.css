@@ -12,8 +12,7 @@
 }
 
 .grid-pets > figure > div {
-    display: flex;
-    gap: 1rem;
-    justify-content: space-between;
-  }
-  
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
