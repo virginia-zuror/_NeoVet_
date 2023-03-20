@@ -1,5 +1,6 @@
 .aside{
-    width: 200px;
+    width: 14vw;
+    min-width: 200px;
     height: 65vh;
     display: flex;
     flex-direction: row;

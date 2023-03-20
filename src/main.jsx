@@ -63,7 +63,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               }
             />
             <Route
-              path="/userclients/agenda"
+              path="/userclients_agenda"
               element={
                 <RequiredAuthClient>
                   <UserClientsAgenda/>
@@ -71,7 +71,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               }
             />    
             <Route
-              path="/userclients/staff"
+              path="/userclients_staff"
               element={
                 <RequiredAuthClient>
                   <UserClientsStaff/>
