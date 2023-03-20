@@ -38,6 +38,16 @@ const AsideClient = () => {
               />
             </NavLink>
           </li>
+          <li>
+            <NavLink to="/userclients_createpet">
+              Añadir Mascota
+              <img
+                className="icon"
+                src="https://res.cloudinary.com/depifliz3/image/upload/v1679342582/samples/animals/huella_hbss1b.png"
+                alt="icono huella"
+              />
+            </NavLink>
+          </li>
         </ul>
       </div>
 

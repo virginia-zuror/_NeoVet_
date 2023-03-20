@@ -32,21 +32,21 @@ const Pets = () => {
     <div>
       <AsideStaff />
       <main>
-      <h2>Pets</h2>
-      <input
-        type="text"
-        placeholder="Buscar"
-        onChange={(ev) => {
-          filterFunction(ev.target.value.toLowerCase());
-        }}
-      />
-      <div className="grid-pets">
-        {loaded ? (
-          filter.map((pet) => <PetCard pet={pet} key={pet.chip} />)
-        ) : (
-          <h3>Loading...</h3>
-        )}
-      </div>
+        <h2>Pets</h2>
+        <input
+          type="text"
+          placeholder="Buscar"
+          onChange={(ev) => {
+            filterFunction(ev.target.value.toLowerCase());
+          }}
+        />
+        <div className="grid-pets">
+          {loaded ? (
+            filter.map((pet) => <PetCard pet={pet} key={pet.chip} />)
+          ) : (
+            <h3>Loading...</h3>
+          )}
+        </div>
       </main>
     </div>
   );
