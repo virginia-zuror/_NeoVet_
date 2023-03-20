@@ -2,6 +2,29 @@
   color: var(--secondarycolor);
 }
 
+.flex__container {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  gap: 30px;
+}
+
+.content--left {
+  align-items: center;
+  width: 50%;
+  position: relative;;
+}
+
+.content--left img{
+  position: relative;
+  height: 500px;
+  width:500px;
+}
+#formulario{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
 .container {
   position: relative;
 }
@@ -40,5 +63,7 @@ input:valid {
 }
 
 .container-pwd {
-  display: flex;
+  position:relative;
 }
+
+
