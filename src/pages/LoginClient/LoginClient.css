@@ -27,3 +27,12 @@ form > .pass {
   width: 100%;
   object-fit: cover;
 }
+
+form > a {
+  font-size: 12px;
+  opacity: 30%;
+}
+
+form > a:hover {
+  opacity: 50%;
+}

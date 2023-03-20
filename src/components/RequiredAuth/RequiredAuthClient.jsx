@@ -1,7 +1,5 @@
 import { Navigate, useLocation } from 'react-router-dom';
 
-import UserClients from '../../pages/UserClients/UserClients';
-
 const RequiredAuthClient = ({ children }) => {
   let location = useLocation();
 
