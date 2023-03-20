@@ -29,8 +29,9 @@ const Pets = () => {
   }, []);
 
   return (
-    <main>
+    <div>
       <AsideStaff />
+      <main>
       <h2>Pets</h2>
       <input
       type="text"
@@ -45,7 +46,8 @@ const Pets = () => {
           <h3>Loading...</h3>
         )}
       </div>
-    </main>
+      </main>
+    </div>
   );
 };
 

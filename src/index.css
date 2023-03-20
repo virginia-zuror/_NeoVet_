@@ -24,3 +24,9 @@ body {
   --highlightcolor: rgb(74, 153, 187);
   font-family: 'VAG Rounded Std', 'Varela Round', sans-serif;
 }
+
+main {
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+  width: 100vw;
+}
