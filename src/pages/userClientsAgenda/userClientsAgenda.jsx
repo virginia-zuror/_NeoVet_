@@ -1,10 +1,8 @@
-import React from 'react'
-import "./userClientsAgenda.css"
+import React from 'react';
+import './userClientsAgenda.css';
 
 const userClientsAgenda = () => {
-  return (
-    <div>userClientsAgenda</div>
-  )
-}
+  return <div>userClientsAgenda</div>;
+};
 
-export default userClientsAgenda
+export default userClientsAgenda;

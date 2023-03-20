@@ -51,8 +51,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   <StaffAgenda />
                 </RequiredAuthStaff>
               }
-            /> 
-                       
+            />
+
             <Route
               path="/userclients"
               element={
@@ -68,7 +68,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   <userClientsAgenda />
                 </RequiredAuthClient>
               }
-            />            
+            />
             <Route
               path="/editprofile"
               element={
