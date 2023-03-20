@@ -1,16 +1,18 @@
 import './PetCard.css';
+import Button from "../../UI/Button"
 
 const PetCard = ({ pet }) => {
   return (
     <figure>
       <img src={pet.photo} alt={pet.name} />
-      <h2>{pet.name}</h2>
-      <h3>{pet.specie}</h3>
-      <h3>{pet.breed}</h3>
-      <h3>{pet.birth}</h3>
-      <div>
-        <button>Historial médico</button>
-        <button>Solicitar cita</button>
+      <div className='info-pet'>
+      <h2>Nombre: {pet.name}</h2>
+      <h3>Especie: {pet.specie}</h3>
+      <h3>Raza: {pet.breed}</h3>
+      </div>
+      <div className='pet-buttons'>
+      <Button text="Consulta" padding="lg"/>
+      <Button text="Ver Perfil" padding="lg"/>
       </div>
     </figure>
   );

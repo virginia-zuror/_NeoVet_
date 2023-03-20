@@ -30,7 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             <Route path="/loginstaff" element={<LoginStaff />} />
             <Route path="/loginclientes" element={<LoginClient />} />
             <Route
-              path="/staff/pets"
+              path="/staff_pets"
               element={
                 <RequiredAuthStaff>
                   <Pets />
@@ -46,7 +46,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               }
             />
             <Route
-              path="/staff/agenda"
+              path="/staff_agenda"
               element={
                 <RequiredAuthStaff>
                   <StaffAgenda />
