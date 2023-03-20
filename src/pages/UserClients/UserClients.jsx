@@ -38,12 +38,6 @@ const UserClients = () => {
           <h2>Loading...</h2>
         )}
       </main>
-
-  getPets();
-  return (
-    <div>
-      <AsideClient />
-      <main>Perfil cliente</main>
     </div>
   );
 };
