@@ -2,7 +2,7 @@
   color: var(--secondarycolor);
 }
 
-.hero-section{
+.hero-section {
   position: relative;
   display: flex;
   width: 100%;
@@ -11,25 +11,28 @@
   height: 80vh;
 }
 
-.bar{
-  border-radius:5px;
+.bar {
+  border-radius: 5px;
   height: 3px;
   width: 25vw;
   background-color: #FFBD5C;
+  width: 10vw;
+  background-color: #ffbd5c;
   margin: 10px 10px 10px 0;
 }
 
-.hero-text-container{
+.hero-text-container {
   width: 38%;
   z-index: 1;
   margin-left: 100px;
 }
 
-.hero-text-head{
-  font-size: 6vw;
+.hero-text-head {
+  font-size: 6em;
   margin: 0 0 20px;
   line-height: 1;
 }
+
 
 .hero-text-description{
   font-size: 1.5vw;
@@ -55,7 +58,7 @@
   height: 50vh;
 }
 
-.register-section h2{
+.register-section h2 {
   position: relative;
   object-position: top;
   font-size: 2.5em;

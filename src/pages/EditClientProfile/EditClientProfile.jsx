@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import { API } from '../../services/API.js';
 import Button from '../../UI/Button';
 import Modal from '../../UI/Modal';
+import AsideClient from '../../components/AsideClient/AsideClient';
 
 const EditClientProfile = () => {
   const { register, handleSubmit } = useForm();
@@ -25,7 +26,10 @@ const EditClientProfile = () => {
   };
 
   return (
-    <main>
+    
+    <main className='editMain'>
+    <AsideClient/>
+    <section className='editsection'>
       <h2>Edita tu perfil</h2>
       <form onSubmit={handleSubmit(formSubmit)} id="formulario_edit">
         <div className="container">
@@ -95,6 +99,7 @@ const EditClientProfile = () => {
           padding="lg"
         />
       )}
+      </section>
     </main>
   );
 };

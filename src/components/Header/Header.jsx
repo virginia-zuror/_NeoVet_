@@ -50,9 +50,6 @@ const Header = () => {
             <li>
               <NavLink to="/userclients">Cliente</NavLink>
             </li>
-            <li>
-              <NavLink to="/editprofile">Profile</NavLink>
-            </li>
           </>
         )}
         {localStorage.getItem('token') ? (

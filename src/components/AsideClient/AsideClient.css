@@ -1,16 +1,14 @@
-.aside {
-  width: 14vw;
-  min-width: 200px;
+.asideClient {
+  width: 220px;
+  height: 70%;
   height: 65vh;
   display: flex;
   flex-direction: row;
   border: 1px solid var(--highlightcolor);
   border-radius: 4px;
   padding: 1rem 2rem;
-  margin: 2rem 0;
+  margin: 2rem;
   justify-content: center;
-  position: absolute;
-  left: 2%;
 }
 
 .asideMobile {
@@ -54,7 +52,7 @@
   filter: none;
 }
 
-.asideContainer {
+.asideClientContainer {
   display: flex;
 }
 
