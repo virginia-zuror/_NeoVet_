@@ -31,13 +31,14 @@ const UserClients = () => {
       <AsideClient />
       <main>
         <h3>Tus mascotas</h3>
+
         {loaded ? (
           mascotas?.map((mascota) => (
-            <>
-              <PetCard pet={mascota} key={mascota._id} />
+            <div className="grid-userclients" key={mascota._id}>
+              <PetCard pet={mascota} />
               <Button text="Cita" padding="lg" />
               <Button text="Ver Perfil" padding="lg" />
-            </>
+            </div>
           ))
         ) : (
           <h2>Loading...</h2>

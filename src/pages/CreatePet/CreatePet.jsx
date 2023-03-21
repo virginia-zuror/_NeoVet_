@@ -19,7 +19,19 @@ const CreatePet = () => {
   };
 
   const formSubmit = (formData) => {
-    API.post('/pets', formData).then((res) => {
+    const data = {
+      name: formData.name,
+      specie: formData.specie,
+      breed: formData.breed,
+      birth: formData.birth,
+      chip: formData.chip,
+      gender: formData.gender,
+      photo: formData.photo[0],
+      client: userLoged._id,
+    };
+    API.post('/pets', data, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }).then((res) => {
       console.log(res.data);
       setSubmited(true);
     });
@@ -32,11 +44,11 @@ const CreatePet = () => {
         <h2>Añade una mascota</h2>
         <form onSubmit={handleSubmit(formSubmit)} id="formulario_edit">
           <div className="container">
-            <input type="text" id="name" required {...register('name')} />
+            <input type="text" id="name" required="on" {...register('name')} />
             <label htmlFor="name">Nombre</label>
           </div>
           <div className="container">
-            <input type="text" id="specie" required {...register('specie')} />
+            <input type="text" id="specie" required="on" {...register('specie')} />
             <label htmlFor="specie">Especie</label>
           </div>
           <div className="container">
@@ -44,7 +56,7 @@ const CreatePet = () => {
               type="text"
               id="breed"
               name="breed"
-              required
+              required="on"
               {...register('breed')}
             />
             <label htmlFor="breed">Raza</label>
@@ -54,7 +66,7 @@ const CreatePet = () => {
               type="text"
               id="birth"
               name="birth"
-              required
+              required="on"
               {...register('birth')}
             />
             <label htmlFor="birth">Fecha nacimiento</label>
@@ -64,7 +76,7 @@ const CreatePet = () => {
               type="text"
               id="chip"
               name="chip"
-              required
+              required="on"
               {...register('chip')}
             />
             <label htmlFor="chip">Chip</label>
@@ -74,20 +86,14 @@ const CreatePet = () => {
               type="text"
               id="gender"
               name="gender"
-              required
+              required="on"
               {...register('gender')}
             />
             <label htmlFor="gender">Género</label>
           </div>
           <div className="container">
-            <input
-              type="file"
-              id="photo"
-              name="photo"
-              required
-              {...register('photo')}
-            />
-            <label htmlFor="photo"></label>
+            <input type="file" id="photo" name="photo" {...register('photo')} />
+            <label htmlFor="photo">Photo</label>
           </div>
           <Button
             text="Guardar cambios"
@@ -102,7 +108,7 @@ const CreatePet = () => {
         {submited && clkSave && (
           <Modal
             content="Mascota añadida"
-            action={() => checking()}
+            action={checking}
             text="X"
             className="modal_cambios"
             padding="lg"
