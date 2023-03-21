@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-
+import('./Consult.css');
+import AsideStaff from '../../components/AsideStaff/AsideStaff';
 import { API } from '../../services/API';
 import Button from '../../UI/Button';
 import Modal from '../../UI/Modal';
@@ -33,77 +34,96 @@ const Consult = () => {
   };
 
   return (
-    <main>
-      <h2>Nueva consulta</h2>
-      <form onSubmit={handleSubmit(formSubmit)} id="formulario create_consult">
-        <div className="container">
-          <input type="text" id="date" name="date" required="on" {...register('date')} />
-          <label htmlFor="date">Fecha</label>
-        </div>
-        <div className="container">
-          <input
-            type="text"
-            id="vet"
-            name="vet"
-            defaultValue={typeUser.name}
-            required="on"
-            {...register('vet')}
+    <main className="consultMain">
+      <AsideStaff />
+      <section className="consultSection">
+        <form onSubmit={handleSubmit(formSubmit)} id="create_consult">
+          <h2>Nueva consulta</h2>
+          <div className="filasup">
+            <div className="container">
+              <input
+                type="text"
+                id="date"
+                name="date"
+                required="on"
+                {...register('date')}
+              />
+              <label htmlFor="date">Fecha</label>
+            </div>
+            <div className="container">
+              <input
+                type="text"
+                id="vet"
+                name="vet"
+                defaultValue={typeUser.name}
+                required="on"
+                {...register('vet')}
+              />
+            </div>
+            <div className="container">
+              <input
+                type="text"
+                id="weight"
+                name="weight"
+                required="on"
+                {...register('weight')}
+              />
+              <label htmlFor="weight">Peso (Kg)</label>
+            </div>
+            <div className="container">
+              <input
+                type="text"
+                id="diagnose"
+                name="diagnose"
+                required="on"
+                defaultValue=""
+                {...register('diagnose')}
+              />
+              <label htmlFor="diagnose">Diagnóstico</label>
+            </div>
+          </div>
+          <div className="filamed">
+            <div className="container">
+              <h3>Exploración</h3>
+              <textarea
+                type="text"
+                id="exp"
+                name="exp"
+                required
+                {...register('exp')}
+              ></textarea>
+            </div>
+            <div className="container">
+              <h3>Tratamiento</h3>
+              <textarea
+                type="text"
+                id="treatment"
+                name="treatment"
+                required="on"
+                defaultValue=""
+                {...register('treatment')}
+              ></textarea>
+            </div>
+          </div>
+          <Button
+            padding="xl"
+            type="button"
+            action={() => {
+              checking();
+            }}
+            text="Registrar consulta"
           />
-        </div>
-        <div className="container exploracion">
-          <input
-            type="text"
-            id="weight"
-            name="weight"
-            required="on"
-            {...register('weight')}
+        </form>
+        {submited && clkSave && (
+          <Modal
+            content="Consulta guardada"
+            action={() => checking()}
+            text="X"
+            className="modal_cambios"
+            padding="lg"
           />
-          <label htmlFor="weight">Peso (Kg)</label>
-        </div>
-        <div className="container exploracion">
-          <input type="text" id="exp" name="exp" required="on" {...register('exp')} />
-          <label htmlFor="exp">Exploración</label>
-        </div>
-        <div className="container">
-          <input
-            type="text"
-            id="diagnose"
-            name="diagnose"
-            required="on"
-            defaultValue=""
-            {...register('diagnose')}
-          />
-          <label htmlFor="diagnose">Diagnóstico</label>
-        </div>
-        <div className="container exploracion">
-          <input
-            type="text"
-            id="treatment"
-            name="treatment"
-            required="on"
-            defaultValue=""
-            {...register('treatment')}
-          />
-          <label htmlFor="treatment">Tratamiento</label>
-        </div>
-        <Button
-          padding="xl"
-          type="button"
-          action={() => {
-            checking();
-          }}
-          text="Registrar consulta"
-        />
-      </form>
-      {submited && clkSave && (
-        <Modal
-          content="Consulta guardada"
-          action={() => checking()}
-          text="X"
-          className="modal_cambios"
-          padding="lg"
-        />
-      )}
+        )}
+      </section>
     </main>
   );
 };

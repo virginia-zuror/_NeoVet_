@@ -89,8 +89,8 @@ select {
   outline: none;
   border: 1px solid rgba(47, 47, 47, 0.415);
   border-radius: 12px;
-  width: 12rem;
-  height: 2.8rem;
+  color: var(--secondarycolor);
+  
 }
 
 label {

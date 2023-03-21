@@ -33,10 +33,10 @@ const Pets = () => {
   }, []);
 
   return (
-    <div>
+    <main className="editMain patients">
       <AsideStaff />
-      <main>
-        <h2>Pets</h2>
+      <section className="editSection">
+        <h2>Pacientes</h2>
         <input
           type="text"
           placeholder="Buscar"
@@ -46,28 +46,32 @@ const Pets = () => {
         />
         <div className="grid-pets">
           {loaded ? (
-            filter.map((pet, index) => (
-              <figure key={index} className="pet_figure">
-                <PetCard pet={pet} />
-                <div className="pet-buttons">
-                  <Button
-                    text="Nueva Consulta"
-                    padding="lg"
-                    action={() => {
-                      localStorage.setItem('pet', JSON.stringify(pet));
-                      navigate('/consult');
-                    }}
-                  />
-                  <Button text="Ver Perfil" padding="lg" />
-                </div>
-              </figure>
-            ))
+            filter.length ? (
+              filter.map((pet, index) => (
+                <figure key={index} className="pet_figure">
+                  <PetCard pet={pet} />
+                  <div className="pet-buttons">
+                    <Button
+                      text="Nueva Consulta"
+                      padding="lg"
+                      action={() => {
+                        localStorage.setItem('pet', JSON.stringify(pet));
+                        navigate('/consult');
+                      }}
+                    />
+                    <Button text="Ver Perfil" padding="lg" />
+                  </div>
+                </figure>
+              ))
+            ) : (
+              <h3>No se han encontrado coincidencias de búsqueda</h3>
+            )
           ) : (
             <h3>Loading...</h3>
           )}
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 };
 
