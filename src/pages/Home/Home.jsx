@@ -5,6 +5,7 @@ import { useForm } from 'react-hook-form';
 
 import { API } from '../../services/API.js';
 import Button from '../../UI/Button';
+import StaffCard from '../../components/StaffCard/StaffCard'
 
 const Home = () => {
   const { register, handleSubmit } = useForm();
@@ -25,8 +26,18 @@ const Home = () => {
     });
   };
 
+  const [staff, setStaff] = useState([]);
+
+  const getStaff = () => {
+    API.get('/staff').then((res) => {
+      setStaff(res.data);
+      setLoaded(true);
+    });
+  };
+
   useEffect(() => {
     getAdmins();
+    getStaff();
   }, []);
 
   const [shown, setShown] = useState(false);
@@ -41,23 +52,32 @@ const Home = () => {
             Lorem fistrum 
           </h1>
           <h3 className="hero-text-description">
-          pecador pecador está la cosa muy malar hasta luego Lucas pecador pecador está la cosa muy malar hasta luego Lucas
+          Pecador pecador está la cosa muy malar hasta luego Lucas pecador pecador está la cosa muy malar hasta luego Lucas
           </h3>
           <div className="bar"></div>
-          <Button
-              text="Regístrate"
-              type="submit"
-              onClick={formSubmit}
-              padding="lg"
-              variant="contained"
-            />
+          <a href="#formulario">
+            <Button
+                text="Haz click aquí y regístrate ya"
+                type="submit"
+                padding="xl"
+              />
+            </a>
         </div>
         <div className="hero-illustration-container">
           <img src="https://res.cloudinary.com/dbumm5v2e/image/upload/v1679339852/neovetdrawing_d2if02.png" alt="Chica con perro y gato"></img>
         </div>
       </section>
+      <section className="staff-section">
+          { loaded ? (
+            staff.map((st) => (
+                <StaffCard key={ st._id } st={ st }/>
+            )) 
+            ) : (
+            <p>Loading...</p>
+            )};
+      </section>
       <section className="register-section">
-          <h2>Crea tu cuenta aquí y lorem fistrum pecador pecador!</h2>
+          <h2>Solicitud de registro</h2>
           <form onSubmit={handleSubmit(formSubmit)} id="formulario">
             <div className="container container-name">
               <input
@@ -177,9 +197,9 @@ const Home = () => {
               type="submit"
               onClick={formSubmit}
               padding="lg"
+              size="lg"
             />
           </form>
-        
       </section>
     </main>
   );
