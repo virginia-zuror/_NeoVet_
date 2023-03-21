@@ -6,3 +6,22 @@
   flex-direction: row;
   width: 30%;
 }
+
+.editMain{
+  display: flex;
+  flex-direction: row;
+}
+
+.editSection{
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .editMain{
+    flex-direction: column;
+    justify-content: center;
+  }
+}
