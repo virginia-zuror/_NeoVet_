@@ -65,6 +65,7 @@ const Home = () => {
           ></img>
         </div>
       </section>
+      <h2>Nuestro equipo</h2>
       <section className="staff-section">
         {loaded ? (
           staff.map((st) => <StaffCard key={st._id} st={st} />)

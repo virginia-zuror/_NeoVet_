@@ -163,3 +163,36 @@ input:valid {
     margin-left: 10px;
   }
 }
+
+.staff-section{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 4rem;
+  gap: 2rem;
+}
+
+.staff-section > figure > img {
+  width: 200px;
+}
+
+.staff-section > figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid red;
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+}
+
+.staff-section > figure:hover {
+  scale: 1.1;
+  transition: 0.5s all ease-in-out;
+}
+
