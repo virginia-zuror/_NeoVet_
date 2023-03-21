@@ -166,9 +166,13 @@ input:valid {
 
 .staff-section{
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   margin-bottom: 4rem;
   gap: 2rem;
+  width: 100vw;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  padding-top: 1rem;
 }
 
 .staff-section > figure > img {
