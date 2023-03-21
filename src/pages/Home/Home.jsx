@@ -3,6 +3,7 @@ import './Home.css';
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import StaffCard from '../../components/StaffCard/StaffCard';
 import { API } from '../../services/API.js';
 import Button from '../../UI/Button';
 
@@ -25,8 +26,18 @@ const Home = () => {
     });
   };
 
+  const [staff, setStaff] = useState([]);
+
+  const getStaff = () => {
+    API.get('/staff').then((res) => {
+      setStaff(res.data);
+      setLoaded(true);
+    });
+  };
+
   useEffect(() => {
     getAdmins();
+    getStaff();
   }, []);
 
   const [shown, setShown] = useState(false);
@@ -39,17 +50,13 @@ const Home = () => {
         <div className="hero-text-container">
           <h1 className="hero-text-head">Lorem fistrum</h1>
           <h3 className="hero-text-description">
-            pecador pecador está la cosa muy malar hasta luego Lucas pecador pecador está
+            Pecador pecador está la cosa muy malar hasta luego Lucas pecador pecador está
             la cosa muy malar hasta luego Lucas
           </h3>
           <div className="bar"></div>
-          <Button
-            text="Regístrate"
-            type="submit"
-            onClick={formSubmit}
-            padding="lg"
-            variant="contained"
-          />
+          <a href="#formulario">
+            <Button text="Haz click aquí y regístrate ya" type="submit" padding="xl" />
+          </a>
         </div>
         <div className="hero-illustration-container">
           <img
@@ -58,8 +65,16 @@ const Home = () => {
           ></img>
         </div>
       </section>
+      <section className="staff-section">
+        {loaded ? (
+          staff.map((st) => <StaffCard key={st._id} st={st} />)
+        ) : (
+          <p>Loading...</p>
+        )}
+        ;
+      </section>
       <section className="register-section">
-        <h2>Crea tu cuenta aquí y lorem fistrum pecador pecador!</h2>
+        <h2>Solicitud de registro</h2>
         <form onSubmit={handleSubmit(formSubmit)} id="formulario">
           <div className="container container-name">
             <input type="text" id="name" name="name" required {...register('name')} />
@@ -162,7 +177,13 @@ const Home = () => {
               )}
             </button>
           </div>
-          <Button text="Regístrate" type="submit" onClick={formSubmit} padding="lg" />
+          <Button
+            text="Regístrate"
+            type="submit"
+            onClick={formSubmit}
+            padding="lg"
+            size="lg"
+          />
         </form>
       </section>
     </main>
