@@ -2,7 +2,7 @@
   color: var(--secondarycolor);
 }
 
-.hero-section{
+.hero-section {
   position: relative;
   display: flex;
   width: 100%;
@@ -11,26 +11,26 @@
   align-items: center;
 }
 
-.bar{
-  border-radius:5px;
+.bar {
+  border-radius: 5px;
   height: 3px;
   width: 10vw;
-  background-color: #FFBD5C;
+  background-color: #ffbd5c;
   margin: 10px 10px 10px 0;
 }
 
-.hero-text-container{
+.hero-text-container {
   width: 38%;
   z-index: 1;
 }
 
-.hero-text-head{
+.hero-text-head {
   font-size: 6em;
   margin: 0 0 20px;
   line-height: 1;
 }
 
-.hero-text-description{
+.hero-text-description {
   width: 80%;
 }
 
@@ -47,13 +47,13 @@
   width: 100%;
 }
 
-.register-section h2{
+.register-section h2 {
   position: relative;
   font-size: 35px;
   z-index: 1;
   margin-bottom: 2rem;
   margin: 0 0 2rem 0;
-  width:20vw;
+  width: 20vw;
 }
 
 #formulario {
