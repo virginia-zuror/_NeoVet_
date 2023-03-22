@@ -1,27 +1,23 @@
-.editMain{
+.editMain {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 5rem;
-
 }
 
-
-.editSection{
+.editSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
   color: var(--highlightcolor);
-  
 }
 
 .editSection > input {
   width: 50%;
 }
-
 
 .pet_figure {
   display: flex;

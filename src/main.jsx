@@ -8,6 +8,7 @@ import App from './App';
 import RequiredAuthClient from './components/RequiredAuth/RequiredAuthClient';
 import RequiredAuthStaff from './components/RequiredAuth/RequiredAuthStaff';
 import NeovetContextProvider from './context/neovetContext';
+import Consult from './pages/Consult/Consult';
 import CreatePet from './pages/CreatePet/CreatePet';
 import EditClientProfile from './pages/EditClientProfile/EditClientProfile';
 import Home from './pages/Home/Home';
@@ -20,7 +21,6 @@ import StaffAgenda from './pages/StaffAgenda/StaffAgenda';
 import UserClients from './pages/UserClients/UserClients';
 import UserClientsAgenda from './pages/UserClientsAgenda/UserClientsAgenda';
 import UserClientsStaff from './pages/UserClientsStaff/UserClientsStaff';
-import Consult from './pages/Consult/Consult';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
