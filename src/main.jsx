@@ -19,7 +19,7 @@ import Pets from './pages/Pets/Pets';
 import Staff from './pages/Staff/Staff';
 import StaffAgenda from './pages/StaffAgenda/StaffAgenda';
 import UserClients from './pages/UserClients/UserClients';
-import UserClientsAgenda from './pages/UserClientsAgenda/UserClientsAgenda';
+import UserClientsAgenda from './pages/userClientsAgenda/userClientsAgenda';
 import UserClientsAppoint from './pages/UserClientsAppoint/UserClientsAppoint';
 import UserClientsStaff from './pages/UserClientsStaff/UserClientsStaff';
 
