@@ -1,0 +1,13 @@
+.staff_overview{
+    padding-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px));
+    gap: 2rem;
+}
+.cita_pend{
+    display:flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: start;
+    justify-content: start;
+}
