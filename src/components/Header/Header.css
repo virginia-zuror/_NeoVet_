@@ -32,3 +32,21 @@
 .header > .links > li > .active {
   border-bottom: 2px solid var(--primarycolor);
 }
+
+.logo {
+  width: 150px;
+}
+
+.avatar-staff > img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.avatar-staff {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}

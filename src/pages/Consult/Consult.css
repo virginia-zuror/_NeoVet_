@@ -1,18 +1,17 @@
-
-.consultMain{
+.consultMain {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
   gap: 3rem;
 }
-.consultMain > div{
+.consultMain > div {
   margin: 0 0;
-  position:static;
+  position: static;
   left: 0;
-  top:8rem;
+  top: 8rem;
 }
-.consultSection{
+.consultSection {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -22,7 +21,7 @@
   width: 75vw;
   padding-right: 18rem;
 }
-#create_consult{
+#create_consult {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -30,17 +29,17 @@
   align-items: center;
   padding-left: 15rem;
 }
-.filasup{
+.filasup {
   display: flex;
   gap: 1rem;
   justify-content: space-between;
   width: 100%;
 }
-.filamed{
+.filamed {
   display: flex;
   gap: 1rem;
 }
-textarea{
+textarea {
   width: 30rem;
   height: 25rem;
   overflow: scroll;
@@ -52,6 +51,6 @@ textarea{
   font-family: 'VAG Rounded Std', 'Varela Round', sans-serif;
   padding: 0.8em;
 }
-textarea:focus{
-  border:2px solid var(--highlightcolor);
+textarea:focus {
+  border: 2px solid var(--highlightcolor);
 }

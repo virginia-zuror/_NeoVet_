@@ -7,20 +7,18 @@
   width: 30%;
 }
 
-.editMain{
+.editMain {
   display: flex;
   flex-direction: row;
 }
 
-.editSection{
+.editSection {
   display: flex;
   flex-direction: column;
 }
 
-
-
 @media screen and (max-width: 600px) {
-  .editMain{
+  .editMain {
     flex-direction: column;
     justify-content: center;
   }
