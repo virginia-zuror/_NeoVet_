@@ -59,7 +59,14 @@ const Pets = () => {
                         navigate('/consult');
                       }}
                     />
-                    <Button text="Ver Perfil" padding="lg" />
+                    <Button
+                      text="Ver Perfil"
+                      padding="lg"
+                      action={() => {
+                        localStorage.setItem('pet', JSON.stringify(pet));
+                        navigate('/staff_pets/:id');
+                      }}
+                    />
                   </div>
                 </figure>
               ))

@@ -14,7 +14,17 @@ const UserClients = () => {
   const [mascotas, setMascotas] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
+  const [details, setDetails] = useState('');
   const userLoged = JSON.parse(localStorage.getItem('user'));
+  //const getIdPet = idPet._id;
+  console.log(userLoged.pets);
+
+  /*const getPetsById = () => {
+    API.get(`/pets/${getIdPet}`).then((res) => {
+      setDetails(res.data);
+      console.log(res.data);
+    });
+  };*/
 
   const getPets = () => {
     API.get('/userclients').then((res) => {
@@ -27,6 +37,7 @@ const UserClients = () => {
 
   useEffect(() => {
     getPets();
+    //getPetsById();
   }, [loaded]);
 
   return (
@@ -48,7 +59,14 @@ const UserClients = () => {
                     navigate('/userclients_appoint');
                   }}
                 />
-                <Button text="Ver Perfil" padding="lg" />
+                <Button
+                  text="Ver Perfil"
+                  padding="lg"
+                  action={() => {
+                    localStorage.setItem('pet', JSON.stringify(mascota));
+                    navigate('/userclients/:id');
+                  }}
+                />
               </div>
             ))
           ) : (
