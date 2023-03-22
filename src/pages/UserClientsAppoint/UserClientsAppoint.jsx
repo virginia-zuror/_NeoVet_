@@ -14,23 +14,33 @@ const UserClientsAppoint = () => {
   const [staff, setStaff] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [admins, setAdmins] = useState([]);
+  const [client, setClient] = useState([]);
+  const [clinic, setClinic] = useState([]);
 
   const petInAppoint = JSON.parse(localStorage.getItem('pet'));
-  const typeUser = JSON.parse(localStorage.getItem('user'));
+  const userLocal = JSON.parse(localStorage.getItem('user'));
+  let arrayClinic = [];
 
-  const getStaff = () => {
-    API.get('/staff').then((res) => {
-      setStaff(res.data);
-      setLoaded(true);
-    });
-  };
+
 
   const getAdmins = () => {
     API.get('/admins').then((res) => {
       setAdmins(res.data);
-      setLoaded(true);
     });
   };
+  
+  const mapAdmins = () => {
+    console.log("iniciando función")
+    admins.map((item)=>{
+      item.clients.map((cl)=>{
+        cl._id === userLocal._id && arrayClinic.push(item)
+      })
+    }) 
+    console.log(clinic)
+    setClinic(arrayClinic)
+    setLoaded(true);
+  };
+
 
   const formSubmit = (formData) => {
     const data = {
@@ -49,8 +59,8 @@ const UserClientsAppoint = () => {
 
   useEffect(() => {
     getAdmins();
-    getStaff();
-  }, []);
+    mapAdmins();
+  }, [loaded]);
 
   return (
     <main className="appointMain">
@@ -72,9 +82,9 @@ const UserClientsAppoint = () => {
             <select name="staff" id="staff" defaultValue="nothing">
               <option value="nothing"></option>
               {loaded ? (
-                admins.map((staffmember) => (
-                  <option key={staffmember._id} value={staffmember.business}>
-                    {staffmember.business}
+                clinic.staff.map((staffmember) => (
+                  <option key={staffmember._id} value={staffmember.name}>
+                    {staffmember.name}
                   </option>
                 ))
               ) : (
@@ -87,7 +97,9 @@ const UserClientsAppoint = () => {
             <select name="staff" id="admins" defaultValue="none">
               <option value={null}></option>
               <option value="vacuna">Vacuna</option>
-              <option value="revisión">revisión</option>
+              <option value="revisión">Revisión</option>
+              <option value="consulta">Consulta</option>
+              <option value="gestión">Gestión</option>
             </select>
             <label htmlFor="staff">Motivo</label>
           </div>
