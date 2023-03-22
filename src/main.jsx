@@ -20,6 +20,7 @@ import StaffAgenda from './pages/StaffAgenda/StaffAgenda';
 import UserClients from './pages/UserClients/UserClients';
 import UserClientsAgenda from './pages/UserClientsAgenda/UserClientsAgenda';
 import UserClientsStaff from './pages/UserClientsStaff/UserClientsStaff';
+import UserClientsAppoint from './pages/UserClientsAppoint/UserClientsAppoint';
 import Consult from './pages/Consult/Consult';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -61,6 +62,14 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               element={
                 <RequiredAuthClient>
                   <UserClients />
+                </RequiredAuthClient>
+              }
+            />
+            <Route
+              path="/userclients_appoint"
+              element={
+                <RequiredAuthClient>
+                  <UserClientsAppoint />
                 </RequiredAuthClient>
               }
             />
