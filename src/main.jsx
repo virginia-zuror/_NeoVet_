@@ -20,9 +20,8 @@ import Staff from './pages/Staff/Staff';
 import StaffAgenda from './pages/StaffAgenda/StaffAgenda';
 import UserClients from './pages/UserClients/UserClients';
 import UserClientsAgenda from './pages/UserClientsAgenda/UserClientsAgenda';
-import UserClientsStaff from './pages/UserClientsStaff/UserClientsStaff';
 import UserClientsAppoint from './pages/UserClientsAppoint/UserClientsAppoint';
-import Consult from './pages/Consult/Consult';
+import UserClientsStaff from './pages/UserClientsStaff/UserClientsStaff';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
