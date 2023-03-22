@@ -15,6 +15,7 @@ import Home from './pages/Home/Home';
 import LoginClient from './pages/LoginClient/LoginClient';
 import LoginStaff from './pages/LoginStaff/LoginStaff';
 import NotFound from './pages/NotFound/NotFound';
+import PetDetails from './pages/PetDetails/PetDetails';
 import Pets from './pages/Pets/Pets';
 import Staff from './pages/Staff/Staff';
 import StaffAgenda from './pages/StaffAgenda/StaffAgenda';
@@ -48,6 +49,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 </RequiredAuthStaff>
               }
             />
+            <Route path="/staff_pets/:id" element={<PetDetails />} />
+            <Route path="/userclients/:id" element={<PetDetails />} />
             <Route
               path="/staff_agenda"
               element={

@@ -40,7 +40,7 @@ const LoginStaff = () => {
   return (
     <main>
       <h2>Login Profesionales</h2>
-      <form onSubmit={handleSubmit(formSubmit)}>
+      <form className="form-loginstaff" onSubmit={handleSubmit(formSubmit)}>
         <div className="container">
           <input
             type="text"
@@ -75,6 +75,7 @@ const LoginStaff = () => {
             )}
           </button>
         </div>
+
         <Button padding="lg" text="Login" type="submit" />
       </form>
       {errorEmptyfield !== null && <h2>{errorEmptyfield}</h2>}
