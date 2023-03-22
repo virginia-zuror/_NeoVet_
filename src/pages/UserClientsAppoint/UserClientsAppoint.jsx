@@ -1,80 +1,74 @@
+import './UserClientsAppoint.css';
+
 import React, { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import "./UserClientsAppoint.css"
-import AsideClient from '../../components/AsideClient/AsideClient'
+
+import AsideClient from '../../components/AsideClient/AsideClient';
 import { API } from '../../services/API';
 import Button from '../../UI/Button';
 import Modal from '../../UI/Modal';
 
-
-
-
 const UserClientsAppoint = () => {
-    const { handleSubmit, register } = useForm();
-    const [submited, setSubmited] = useState(false);
-    const [staff, setStaff] = useState([]);
-    const [loaded, setLoaded] = useState(false);
-    const [admins, setAdmins] = useState([]);
+  const { handleSubmit, register } = useForm();
+  const [submited, setSubmited] = useState(false);
+  const [staff, setStaff] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+  const [admins, setAdmins] = useState([]);
 
-    const petInAppoint = JSON.parse(localStorage.getItem('pet'));
-    const typeUser = JSON.parse(localStorage.getItem('user'));
+  const petInAppoint = JSON.parse(localStorage.getItem('pet'));
+  const typeUser = JSON.parse(localStorage.getItem('user'));
 
-    const getStaff = () => {
-        API.get('/staff').then((res) => {
-          setStaff(res.data);
-          setLoaded(true);
-        });
-      };
+  const getStaff = () => {
+    API.get('/staff').then((res) => {
+      setStaff(res.data);
+      setLoaded(true);
+    });
+  };
 
-      const getAdmins = () => {
-        API.get('/admins').then((res) => {
-          setAdmins(res.data);
-          setLoaded(true);
-        });
-      };
+  const getAdmins = () => {
+    API.get('/admins').then((res) => {
+      setAdmins(res.data);
+      setLoaded(true);
+    });
+  };
 
- 
+  const formSubmit = (formData) => {
+    const data = {
+      date: formData.date,
+      vet: formData.vet,
+      reason: formData.reason,
+      comments: formData.comments,
+      pet: petInAppoint._id,
+    };
 
-    const formSubmit = (formData) => {
-        const data = {
-          date: formData.date,
-          vet: formData.vet,
-          reason: formData.reason,
-          comments: formData.comments,
-          pet: petInAppoint._id,
-        };
-    
-        API.post('/appointments', data).then((res) => {
-          console.log(res.data);
-          setSubmited(true);
-        });
-      };
+    API.post('/appointments', data).then((res) => {
+      console.log(res.data);
+      setSubmited(true);
+    });
+  };
 
-
-      useEffect(() => {
-        getAdmins();
-        getStaff();
-      }, []);
-
-
+  useEffect(() => {
+    getAdmins();
+    getStaff();
+  }, []);
 
   return (
-    <main className='appointMain'>
-    <AsideClient/>
-    <section>
-    <form onSubmit={handleSubmit(formSubmit)}>
+    <main className="appointMain">
+      <AsideClient />
+      <section>
+        <form onSubmit={handleSubmit(formSubmit)}>
           <h2>Solicitud de cita</h2>
           <div className="container">
-              <input
-                type="date"
-                id="date"
-                name="date"
-                required="on"
-                {...register('date')}
-              />
-              <label htmlFor="date">Fecha</label>
-            </div>
-            <div className="container container-staff">
+            <input
+              type="date"
+              id="date"
+              name="date"
+              required="on"
+              {...register('date')}
+            />
+            <label htmlFor="date">Fecha</label>
+          </div>
+          <div className="container container-staff">
             <select name="staff" id="staff" defaultValue="nothing">
               <option value="nothing"></option>
               {loaded ? (
@@ -98,15 +92,15 @@ const UserClientsAppoint = () => {
             <label htmlFor="staff">Motivo</label>
           </div>
           <div className="container">
-              <input
-                type="text"
-                id="comments"
-                name="comments"
-                required="on"
-                {...register('comments')}
-              />
-              <label htmlFor="comments">Comentarios adicionales</label>
-            </div>
+            <input
+              type="text"
+              id="comments"
+              name="comments"
+              required="on"
+              {...register('comments')}
+            />
+            <label htmlFor="comments">Comentarios adicionales</label>
+          </div>
           <Button
             padding="xl"
             type="button"
@@ -116,9 +110,9 @@ const UserClientsAppoint = () => {
             text="Solicitar"
           />
         </form>
-    </section>
+      </section>
     </main>
-  )
-}
+  );
+};
 
-export default UserClientsAppoint
+export default UserClientsAppoint;

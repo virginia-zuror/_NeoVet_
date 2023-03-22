@@ -1,39 +1,23 @@
-.clientOverviewMain{
+.clientOverviewMain {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 5rem;
-
 }
 
-
-.clientOverviewSection{
+.clientOverviewSection {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
   color: var(--highlightcolor);
-  
 }
 
 .clientOverviewSection > input {
   width: 50%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .grid-userclients > img {
   width: 10vw;
