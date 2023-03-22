@@ -49,8 +49,15 @@ const AsideClient = () => {
             </NavLink>
           </li>
           <li>
-              <NavLink to="/editprofile">Editar Perfil <img className="icon" src="https://res.cloudinary.com/ddu2qdsdp/image/upload/v1679404997/Neovet/edit_FILL0_wght400_GRAD0_opsz48_iuflhs.svg" alt="icono editar perfil"/></NavLink>
-            </li>
+            <NavLink to="/editprofile">
+              Editar Perfil{' '}
+              <img
+                className="icon"
+                src="https://res.cloudinary.com/ddu2qdsdp/image/upload/v1679404997/Neovet/edit_FILL0_wght400_GRAD0_opsz48_iuflhs.svg"
+                alt="icono editar perfil"
+              />
+            </NavLink>
+          </li>
         </ul>
       </div>
 
@@ -93,8 +100,14 @@ const AsideClient = () => {
             </NavLink>
           </li>
           <li>
-              <NavLink to="/editprofile"><img className="icon" src="https://res.cloudinary.com/ddu2qdsdp/image/upload/v1679404997/Neovet/edit_FILL0_wght400_GRAD0_opsz48_iuflhs.svg" alt="icono editar perfil"/></NavLink>
-            </li>
+            <NavLink to="/editprofile">
+              <img
+                className="icon"
+                src="https://res.cloudinary.com/ddu2qdsdp/image/upload/v1679404997/Neovet/edit_FILL0_wght400_GRAD0_opsz48_iuflhs.svg"
+                alt="icono editar perfil"
+              />
+            </NavLink>
+          </li>
         </ul>
       </div>
     </div>

@@ -8,6 +8,7 @@ import App from './App';
 import RequiredAuthClient from './components/RequiredAuth/RequiredAuthClient';
 import RequiredAuthStaff from './components/RequiredAuth/RequiredAuthStaff';
 import NeovetContextProvider from './context/neovetContext';
+import Consult from './pages/Consult/Consult';
 import CreatePet from './pages/CreatePet/CreatePet';
 import EditClientProfile from './pages/EditClientProfile/EditClientProfile';
 import Home from './pages/Home/Home';

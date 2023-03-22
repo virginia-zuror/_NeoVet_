@@ -4,35 +4,63 @@ import { useEffect, useState } from 'react';
 
 import AsideStaff from '../../components/AsideStaff/AsideStaff';
 import { API } from '../../services/API.js';
+import Button from '../../UI/Button';
 
 const Staff = () => {
-  const [newAppointments, setNewAppointments] = useState([]);
-  const [pendingAp, setPendingAp] = useState([]);
+  const [pets, setPets] = useState([]);
+
   const [loaded, setLoaded] = useState(false);
+  const [showAppoints, setShowAppoints] = useState(false);
+  let petWithAppointment = [];
+
   const checkAppointments = () => {
-    API.get('/appointments').then((res) => {
-      setNewAppointments(res.data);
-      const appointFilter = newAppointments.filter(
-        (appointment) => appointment.checked === false,
-      );
-      setPendingAp(appointFilter);
-      setLoaded(true);
+    API.get('/pets').then((res) => {
+      setPets(res.data);
     });
   };
 
+  const mapAppoints = () => {
+    pets.map((pet) => {
+      pet.appoint.map((ap) => {
+        if (ap.checked === false) {
+          petWithAppointment.push({
+            pet,
+            ap,
+          });
+        }
+      });
+    });
+    setShowAppoints(true);
+    console.log(showAppoints);
+    setLoaded(true);
+  };
+
+  /* const putToChecked = () => {
+    const data = {
+      checked: true,
+    };
+    API.put(`/appointments/${pendingAp}`, data).then((res) => {
+      console.log(res.data);
+    });
+  }; */
   useEffect(() => {
     checkAppointments();
-
-    console.log(pendingAp);
+    mapAppoints();
+    console.log(petWithAppointment[1]?.pet.name, petWithAppointment[1]?.ap.reason);
   }, [loaded]);
 
   return (
     <main className="editMain patients">
       <AsideStaff />
       <section className="staff_overview">
-        {pendingAp.map((ap) => (
-          <h3 key={ap._id}>{ap.reason}</h3>
-        ))}
+        {loaded ? (
+          <>
+            <h2>{petWithAppointment[0]?.pet.name}</h2>
+            <h2>{petWithAppointment[0]?.ap.reason}</h2>
+          </>
+        ) : (
+          ''
+        )}
       </section>
     </main>
   );

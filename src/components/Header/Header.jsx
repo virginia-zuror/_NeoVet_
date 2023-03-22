@@ -23,17 +23,23 @@ const Header = () => {
     <div className="header">
       <abbr title="Home">
         <NavLink to="/">
-          <h2>Logo</h2>
+          <img
+            className="logo"
+            src="https://res.cloudinary.com/depifliz3/image/upload/v1679478181/Neovet_blanco_Mesa_de_trabajo_1_uii63w.png"
+            alt="logo-neovet"
+          />
         </NavLink>
       </abbr>
-      {user ? (
-        <>
-          <h2>Hola, {user.name}</h2>
-        </>
-      ) : (
-        <>
-          <h2>Hola, invitado</h2>
-        </>
+      {user && typeUser.rol === 'userClient' && (
+        <div className="avatar-staff">
+          <h2>{user.name}</h2>
+        </div>
+      )}
+      {user && typeUser.rol === 'userAdmin' && (
+        <div className="avatar-staff">
+          <h2>{user.name}</h2>
+          <img src={user.avatar} alt={user.avatar} />
+        </div>
       )}
       <ul className="links">
         <li>
@@ -73,7 +79,7 @@ const Header = () => {
               </select>
             </li>
             <li>
-              <a href="#formulario">
+              <a href="/#formulario">
                 <Button text="Regístrate" padding="lg" variant="contained" />
               </a>
             </li>
