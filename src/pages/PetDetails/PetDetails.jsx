@@ -9,7 +9,8 @@ import Button from '../../UI/Button';
 
 const PetDetails = () => {
   const [details, setDetails] = useState('');
-  const [appoint, setAppoint] = useState([]);
+  const [appoints, setAppoints] = useState([]);
+  const [consults, setConsults] = useState([]);
   const idPet = JSON.parse(localStorage.getItem('pet'));
   const getIdPet = idPet._id;
   const typeUser = JSON.parse(localStorage.getItem('user'));
@@ -22,14 +23,21 @@ const PetDetails = () => {
   };
 
   const getAppointments = () => {
-    API.get('/appointments').then((res) => {
-      setAppoint(res.data);
+    API.get(`/appointments`).then((res) => {
+      setAppoints(res.data);
+    });
+  };
+
+  const getConsults = () => {
+    API.get(`/consults`).then((res) => {
+      setConsults(res.data);
     });
   };
 
   useEffect(() => {
     getPets();
     getAppointments();
+    getConsults();
   }, []);
 
   return (
@@ -48,16 +56,31 @@ const PetDetails = () => {
             </div>
           </div>
           <div className="second-date">
-            <div>
-              <h2>Consultas</h2>
-              <h2>{details.record}</h2>
-            </div>
-            <div>
+            <div className='pet-details-appoints'>
               <h2>Citas</h2>
-              <h2>{details.appoint}</h2>
+              {idPet.appoint.map((ap) => (
+                <div key={ap._id}>
+                  <h3>Fecha cita: {ap.date.toString().split('').slice(0, 10)}</h3>
+                  <h3>Razón: {ap.reason}</h3>
+                  <h3>Diagnóstico: {ap.state}</h3>
+                </div>
+              ))}
+            </div>
+            <Button padding="lg" text="Descargar Historial" type="submit" />
+            <div className='pet-details-consults'>
+              <h2>Consultas</h2>
+              {idPet.record.map((re) => (
+                <div key={re._id}>
+                  <h3>Fecha consulta: {re.date.toString().split('').slice(0, 10)}</h3>
+                  <h3>Exploración: {re.exp}</h3>
+                  <h3>Diagnóstico: {re.diagnose}</h3>
+                  <h3>Tratamiento: {re.treatment}</h3>
+                  <h3>Peso: {re.weight} kg</h3>
+                  <h3>Veterinario: {re.vet}</h3>
+                </div>
+              ))}
             </div>
           </div>
-          <Button padding="lg" text="Descargar Historial" type="submit" />
         </div>
       </section>
     </main>

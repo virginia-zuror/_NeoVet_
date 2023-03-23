@@ -14,9 +14,12 @@
 
 .second-date {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
+  gap: 2rem;
+  text-align: center;
 }
 
 .global-date {

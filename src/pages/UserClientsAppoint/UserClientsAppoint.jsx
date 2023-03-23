@@ -21,26 +21,23 @@ const UserClientsAppoint = () => {
   const userLocal = JSON.parse(localStorage.getItem('user'));
   let arrayClinic = [];
 
-
-
   const getAdmins = () => {
     API.get('/admins').then((res) => {
       setAdmins(res.data);
     });
   };
-  
+
   const mapAdmins = () => {
-    console.log("iniciando función")
-    admins.map((item)=>{
-      item.clients.map((cl)=>{
-        cl._id === userLocal._id && arrayClinic.push(item)
-      })
-    }) 
-    console.log(clinic)
-    setClinic(arrayClinic)
+    console.log('iniciando función');
+    admins.map((item) => {
+      item.clients.map((cl) => {
+        cl._id === userLocal._id && arrayClinic.push(item);
+      });
+    });
+    console.log(clinic);
+    setClinic(arrayClinic);
     setLoaded(true);
   };
-
 
   const formSubmit = (formData) => {
     const data = {
