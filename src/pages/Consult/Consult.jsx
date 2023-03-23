@@ -6,7 +6,7 @@ import { API } from '../../services/API';
 import Button from '../../UI/Button';
 import Modal from '../../UI/Modal';
 const Consult = () => {
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register, reset } = useForm();
   const [clkSave, setClkSave] = useState(false);
   const [submited, setSubmited] = useState(false);
   const petInConsult = JSON.parse(localStorage.getItem('pet'));
@@ -40,16 +40,17 @@ const Consult = () => {
         <form onSubmit={handleSubmit(formSubmit)} id="create_consult">
           <h2>Nueva consulta</h2>
           <div className="filasup">
-            <div className="container">
+            <div>
+              <h3>Fecha</h3>
               <input
-                type="text"
+                type="date"
                 id="date"
                 name="date"
                 required="on"
                 {...register('date')}
               />
-              <label htmlFor="date">Fecha</label>
             </div>
+            <div className="container"></div>
             <div className="container">
               <input
                 type="text"
@@ -117,7 +118,10 @@ const Consult = () => {
         {submited && clkSave && (
           <Modal
             content="Consulta guardada"
-            action={() => checking()}
+            action={() => {
+              checking();
+              reset();
+            }}
             text="X"
             className="modal_cambios"
             padding="lg"
