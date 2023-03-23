@@ -10,11 +10,37 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 2rem;
   color: var(--highlightcolor);
+  width: 75vw;
+  padding-right: 18rem;
 }
 
 .appointSection > input {
   width: 50%;
+}
+
+#create_appoint {
+  display: flex;
+
+}
+
+.firstRow {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.secondRow {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.comments{
+  height: 10rem;
 }
