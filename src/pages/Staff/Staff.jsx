@@ -108,90 +108,96 @@ const Staff = () => {
   }, [loaded, clkSave === false, loadedClients, accepted]);
 
   return (
-    <main className="editMain appoints">
+    <main className="editMain staff">
       <AsideStaff />
-      <section className="staff_overview">
-        <div>
-          {loaded ? (
-            arrayPetsAppoint.map((item, i) => (
-              <figure key={i} className="cita_pend">
-                <h4>{item.pet.name}</h4>
-                <h5>{item.pet.specie}</h5>
-                <div>
-                  <h5>{item.ap.date.toString().split('').slice(0, 10)}</h5>
-                  <h5>{item.ap.date.toString().split('').slice(11, 16)}</h5>
-                </div>
-                <div>
-                  <h5>Motivo: </h5>
-                  <p>{item.ap.reason}</p>
-                  <h5>Comentario del cliente: </h5>
-                  <p>{item.ap.comments}</p>
-                </div>
-                <div>
+      <div className="window">
+        <section className="staff_ap">
+          <h2>Citas solicitadas:</h2>
+          <div className="appoints">
+            {loaded ? (
+              arrayPetsAppoint.map((item, i) => (
+                <figure key={i} className="cita_pend">
+                  <h4>{item.pet.name}</h4>
+                  <h5>{item.pet.specie}</h5>
+                  <div>
+                    <h5>{item.ap.date.toString().split('').slice(0, 10)}</h5>
+                    <h5>{item.ap.date.toString().split('').slice(11, 16)} H.</h5>
+                  </div>
+                  <div>
+                    <h5>Motivo: </h5>
+                    <p>{item.ap.reason}</p>
+                    <h5>Comentario: </h5>
+                    <p>{item.ap.comments}</p>
+                  </div>
+                  <div>
+                    <Button
+                      text="Aceptar"
+                      action={() => {
+                        pendingAp = item.ap._id;
+                        setClkSave(true);
+                        putToChecked();
+                      }}
+                      padding="lg"
+                    />
+                  </div>
+                  {submited && clkSave ? (
+                    <Modal
+                      content="Cambios realizados"
+                      action={() => {
+                        setClkSave(false);
+                      }}
+                      text="X"
+                      className="modal_cambios"
+                      padding="lg"
+                    />
+                  ) : (
+                    ''
+                  )}
+                </figure>
+              ))
+            ) : (
+              <h2>Loading...</h2>
+            )}
+          </div>
+        </section>
+        <section className="staff_rg">
+          <h2>Registros solicitados:</h2>
+          <div className="registros">
+            {newClients.length ? (
+              newClients.map((client, i) => (
+                <figure key={i} className="reg_pend">
+                  <h4>{client.client.name}</h4>
+                  <h5>{client.client.telephone}</h5>
+                  <h5>{client.client.address.street}</h5>
+                  <h5>{client.client.address.city}</h5>
                   <Button
-                    text="Aceptar"
+                    text="Aceptar registro"
+                    padding="lg"
                     action={() => {
-                      pendingAp = item.ap._id;
+                      pendingCl = client.client._id;
+                      putToAccepted();
                       setClkSave(true);
-                      putToChecked();
                     }}
-                    padding="lg"
                   />
-                </div>
-                {submited && clkSave ? (
-                  <Modal
-                    content="Cambios realizados"
-                    action={() => {
-                      setClkSave(false);
-                    }}
-                    text="X"
-                    className="modal_cambios"
-                    padding="lg"
-                  />
-                ) : (
-                  ''
-                )}
-              </figure>
-            ))
-          ) : (
-            <h2>Loading...</h2>
-          )}
-        </div>
-        <div>
-          {newClients.length ? (
-            newClients.map((client, i) => (
-              <figure key={i}>
-                <h4>{client.client.name}</h4>
-                <h5>{client.client.telephone}</h5>
-                <h5>{client.client.address.street}</h5>
-                <h5>{client.client.address.city}</h5>
-                <Button
-                  text="Aceptar registro"
-                  padding="xl"
-                  action={() => {
-                    pendingCl = client.client._id;
-                    putToAccepted();
-                    setClkSave(true);
-                  }}
-                />
-                {accepted && clkSave && (
-                  <Modal
-                    content="Cambios realizados"
-                    action={() => {
-                      setClkSave(false);
-                    }}
-                    text="X"
-                    className="modal_cambios"
-                    padding="lg"
-                  />
-                )}
-              </figure>
-            ))
-          ) : (
-            <h2>No existen solicitudes de registro pendientes</h2>
-          )}
-        </div>
-      </section>
+                  {accepted && clkSave && (
+                    <Modal
+                      content="Cambios realizados"
+                      action={() => {
+                        setClkSave(false);
+                      }}
+                      text="X"
+                      className="modal_cambios"
+                      padding="lg"
+                    />
+                  )}
+                </figure>
+              ))
+            ) : (
+              <h2>No existen solicitudes de registro pendientes</h2>
+            )}
+          </div>
+        </section>
+      </div>
     </main>
   );
 };
