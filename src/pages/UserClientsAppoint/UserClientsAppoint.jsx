@@ -17,7 +17,6 @@ const UserClientsAppoint = () => {
   const petInAppoint = JSON.parse(localStorage.getItem('pet'));
   const userLocal = JSON.parse(localStorage.getItem('user'));
 
- 
   const getAdmins = () => {
     API.get('/admins')
       .then((res) => {
