@@ -22,13 +22,13 @@
   justify-content: space-between;
   gap: 2rem;
 }
-.header > .links > li > select {
+/* .header > .links > li > select {
   color: var(--secondarycolor);
   border: none;
 }
 .header > .links > li > select:focus {
   outline: none;
-}
+} */
 .header > .links > li > .active {
   border-bottom: 2px solid var(--primarycolor);
 }
