@@ -44,9 +44,11 @@
   height: 10rem;
 }
 
+
 @media screen and (max-width: 600px) {
   .appointMain {
     flex-direction: row;
     width: 100vw;
   }
 }
+
