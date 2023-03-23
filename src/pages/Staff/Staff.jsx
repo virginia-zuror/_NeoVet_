@@ -12,7 +12,6 @@ const Staff = () => {
   let pendingAp = null;
   let pendingCl = null;
   const [loaded, setLoaded] = useState(false);
-  const [clients, setClients] = useState([]);
   const [loadedClients, setLoadedClients] = useState(false);
   const [newClients, setNewClients] = useState([]);
   let clientNotChecked = [];
@@ -21,43 +20,59 @@ const Staff = () => {
   const [clkSave, setClkSave] = useState(false);
   const [submited, setSubmited] = useState(false);
   const [accepted, setAccepted] = useState(false);
+  const staffLogged = JSON.parse(localStorage.getItem('user'));
 
-  const checkAppointments = () => {
-    API.get('/pets').then((res) => {
-      setPets(res.data);
-      setLoaded(true);
-    });
-  };
-  const checkNewClients = () => {
+  /* const checkNewClients = () => {
     API.get('/userclients').then((res) => {
       setClients(res.data);
       setLoadedClients(true);
     });
-  };
-
-  const mapAppoints = () => {
-    pets.map((pet) => {
-      pet.appoint.map((ap) => {
-        if (ap.checked === false) {
-          petWithAppointment.push({
-            pet,
-            ap,
-          });
-        }
+  }; */
+  const [staff, setStaff] = useState();
+  const checkAppointments = () => {
+    API.get(`/staff/${staffLogged._id}`).then((res) => {
+      setStaff(res.data);
+      setLoaded(true);
+    });
+    API.get('/pets').then((res) => {
+      setPets(res.data);
+    });
+    staff?.appointments.map((appointment) => {
+      pets.map((pet) => {
+        pet.appoint.map((ap) => {
+          if (ap._id === appointment && ap.checked === false) {
+            petWithAppointment.push({
+              pet,
+              ap,
+            });
+          }
+        });
       });
     });
     setArrayPetsAppoint(petWithAppointment);
   };
-  const mapRegister = () => {
-    clients.map((client) => {
-      if (client.checked === false) {
-        clientNotChecked.push({
-          client,
-        });
-      }
+
+  const [admins, setAdmins] = useState([]);
+  const checkNewClients = () => {
+    API.get('/admins').then((res) => {
+      console.log('admins', res.data);
+      setAdmins(res.data);
+      setLoadedClients(true);
+    });
+    admins.map((admin) => {
+      admin.staff.map((st) => {
+        if (st._id === staffLogged._id) {
+          admin.clients.map((client) => {
+            if (client.checked === false) {
+              clientNotChecked.push({
+                client,
+              });
+            }
+          });
+        }
+      });
     });
     setNewClients(clientNotChecked);
-    console.log(newClients);
   };
 
   const putToChecked = () => {
@@ -101,10 +116,8 @@ const Staff = () => {
 
   useEffect(() => {
     checkAppointments();
-    mapAppoints();
     checkNewClients();
-    mapRegister();
-    console.log(arrayPetsAppoint);
+    /* mapRegister(); */
   }, [loaded, clkSave === false, loadedClients, accepted]);
 
   return (

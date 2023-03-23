@@ -11,7 +11,21 @@ const Home = () => {
   const { register, handleSubmit } = useForm();
 
   const formSubmit = (formData) => {
-    API.post('/userclients', formData).then((res) => {
+    const data = {
+      name: formData.name,
+      address: {
+        street: formData.address.street,
+        city: formData.address.city,
+        region: formData.address.region,
+        postalCode: formData.address.postalCode,
+      },
+      telephone: formData.telephone,
+      email: formData.email,
+      password: formData.password,
+      dni: formData.dni,
+      admin: formData.admin,
+    };
+    API.post('/userclients', data).then((res) => {
       console.log(res.data);
     });
   };
@@ -140,11 +154,16 @@ const Home = () => {
             <label htmlFor="email">E-mail</label>
           </div>
           <div className="container container-admins">
-            <select name="admins" id="admins" defaultValue="nothing">
+            <select
+              name="admins"
+              id="admins"
+              defaultValue="nothing"
+              {...register('admin')}
+            >
               <option value="nothing"></option>
               {loaded ? (
                 admins.map((admin) => (
-                  <option key={admin._id} value={admin.business}>
+                  <option key={admin._id} value={admin._id}>
                     {admin.business}
                   </option>
                 ))
