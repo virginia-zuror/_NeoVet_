@@ -23,7 +23,6 @@
 
 #create_appoint {
   display: flex;
-
 }
 
 .firstRow {
@@ -41,6 +40,6 @@
   width: 100%;
 }
 
-.comments{
+.comments {
   height: 10rem;
 }

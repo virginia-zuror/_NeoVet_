@@ -20,16 +20,15 @@
   display: flex;
   width: 30%;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
   justify-content: center;
-  
+
   gap: 2rem;
-  
 }
-.editsection > h2{
+.editsection > h2 {
   color: var(--highlightcolor);
 }
-.resultsection{
+.resultsection {
   display: flex;
   flex-direction: column;
   height: 31.25rem;
@@ -37,13 +36,13 @@
   justify-content: center;
   width: 30%;
   gap: 1rem;
-  
 }
-.resultsection > h3, .resultsection>h5{
+.resultsection > h3,
+.resultsection > h5 {
   color: var(--highlightcolor);
 }
 
-.resultsection > div{
+.resultsection > div {
   display: flex;
   flex-direction: row;
 }
@@ -57,9 +56,8 @@
     height: auto;
     align-items: center;
     padding: 0.5rem 0;
-    
   }
-  .editsection{
+  .editsection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -68,11 +66,10 @@
     width: auto;
     gap: 1rem;
   }
-  .resultsection{
+  .resultsection {
     padding: 0 0.5rem;
     text-align: center;
     width: auto;
     height: auto;
-    
   }
 }

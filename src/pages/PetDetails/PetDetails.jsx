@@ -56,7 +56,7 @@ const PetDetails = () => {
             </div>
           </div>
           <div className="second-date">
-            <div className='pet-details-appoints'>
+            <div className="pet-details-appoints">
               <h2>Citas</h2>
               {idPet.appoint.map((ap) => (
                 <div key={ap._id}>
@@ -67,7 +67,7 @@ const PetDetails = () => {
               ))}
             </div>
             <Button padding="lg" text="Descargar Historial" type="submit" />
-            <div className='pet-details-consults'>
+            <div className="pet-details-consults">
               <h2>Consultas</h2>
               {idPet.record.map((re) => (
                 <div key={re._id}>
