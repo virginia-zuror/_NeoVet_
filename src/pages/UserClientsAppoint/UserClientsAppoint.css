@@ -45,10 +45,52 @@
 }
 
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
   .appointMain {
-    flex-direction: row;
-    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-pedir-cita {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .appointSection {
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 2rem;
+  }
+
+  .secondRow {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+
+  }
+
+  .firstRow {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .comments{
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    justify-content: center;
   }
 }
 
