@@ -17,8 +17,7 @@ const UserClientsAppoint = () => {
   const petInAppoint = JSON.parse(localStorage.getItem('pet'));
   const userLocal = JSON.parse(localStorage.getItem('user'));
 
-  let arrayMember = [];
-
+ 
   const getAdmins = () => {
     API.get('/admins')
       .then((res) => {
@@ -50,6 +49,7 @@ const UserClientsAppoint = () => {
     };
 
     API.post('/appointments', data).then((res) => {
+      console.log(res.data);
       setSubmited(true);
     });
   };
@@ -106,9 +106,9 @@ const UserClientsAppoint = () => {
               >
                 <option value="nothing"></option>
                 <option value="vacuna">Vacuna</option>
-                <option value="revisión">Revisión</option>
+                <option value="revisi贸n">Revisi贸n</option>
                 <option value="consulta">Consulta</option>
-                <option value="gestión">Gestión</option>
+                <option value="gesti贸n">Gesti贸n</option>
               </select>
               <label htmlFor="reason">Motivo</label>
             </div>

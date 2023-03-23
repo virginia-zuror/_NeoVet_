@@ -1,8 +1,10 @@
+import './UserClientsStaff.css';
+
 import React, { useEffect, useState } from 'react';
 
 import AsideClient from '../../components/AsideClient/AsideClient';
+import StaffCard from '../../components/StaffCard/StaffCard';
 import { API } from '../../services/API';
-import Button from '../../UI/Button';
 
 const UserClientsStaff = () => {
   const [loaded, setLoaded] = useState(false);
@@ -37,12 +39,11 @@ const UserClientsStaff = () => {
   }, [loaded]);
 
   return (
-    <main className="uCStaffMain">
+    <main className="userClientStaffMain">
       <AsideClient />
-      <section className="uCStaffSection">
-        userClientsStaff
+      <section className="staff-section">
         {clinic.staff ? (
-          clinic.staff.map((staffmember) => <h3>{staffmember.name}</h3>)
+          clinic.staff.map((st) => <StaffCard key={st._id} st={st} />)
         ) : (
           <h3>Loading...</h3>
         )}
