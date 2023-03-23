@@ -8,6 +8,7 @@
   margin: auto;
   width: 70%;
   height: auto;
+  padding-right: 10%;
 }
 .staff {
   gap: 2rem;
@@ -17,6 +18,7 @@
   max-width: 45%;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: 0.5rem;
   align-items: flex-start;
   justify-content: center;
@@ -71,4 +73,59 @@
 
   align-items: start;
   justify-content: start;
+}
+@media only screen and (max-width: 768px){
+  .staff{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    height: auto;
+  }
+  .window{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .staff_ap, .staff_rg{
+    max-width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .appoints{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .cita_pend{display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  }
+  .registros{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .reg_pend{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

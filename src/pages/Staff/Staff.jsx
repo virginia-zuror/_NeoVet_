@@ -23,12 +23,7 @@ const Staff = () => {
   const [accepted, setAccepted] = useState(false);
   const staffLogged = JSON.parse(localStorage.getItem('user'));
 
-  /* const checkNewClients = () => {
-    API.get('/userclients').then((res) => {
-      setClients(res.data);
-      setLoadedClients(true);
-    });
-  }; */
+
   const [staff, setStaff] = useState();
   const checkAppointments = () => {
     API.get(`/staff/${staffLogged._id}`).then((res) => {
@@ -118,7 +113,6 @@ const Staff = () => {
   useEffect(() => {
     checkAppointments();
     checkNewClients();
-    /* mapRegister(); */
   }, [loaded, clkSave === false, loadedClients === true, accepted]);
 
   return (
