@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import "./UserClientsStaff.css"
 
+import AsideClient from '../../components/AsideClient/AsideClient';
 import { API } from '../../services/API';
 import Button from '../../UI/Button';
-import AsideClient from '../../components/AsideClient/AsideClient';
 import StaffCard from '../../components/StaffCard/StaffCard';
+
 
 
 const UserClientsStaff = () => {
@@ -15,19 +16,23 @@ const UserClientsStaff = () => {
   const userLocal = JSON.parse(localStorage.getItem('user'));
 
   const getAdmins = () => {
-    API.get('/admins').then((res) => {
-      setAdmins(res.data);
-    }).then(()=>{mapAdmins();})
-  };
-  
-  const mapAdmins = () => {
-    admins.map((item)=>{
-      item.clients.map((cl)=>{
-        if (cl._id.includes(userLocal._id)) {
-          setClinic(...clinic, item)
-        } 
+    API.get('/admins')
+      .then((res) => {
+        setAdmins(res.data);
       })
-    }) 
+      .then(() => {
+        mapAdmins();
+      });
+  };
+
+  const mapAdmins = () => {
+    admins.map((item) => {
+      item.clients.map((cl) => {
+        if (cl._id.includes(userLocal._id)) {
+          setClinic(...clinic, item);
+        }
+      });
+    });
     console.log(clinic);
     setLoaded(true);
   };
@@ -36,6 +41,7 @@ const UserClientsStaff = () => {
   }, [loaded]);
 
   return (
+
       <main className='userClientStaffMain'>
       <AsideClient />
       <section className="staff-section">
@@ -44,9 +50,9 @@ const UserClientsStaff = () => {
           <StaffCard key={st._id} st={st}/>
         ))):(<h3>Loading...</h3>)
       }
-      </section>
-      </main>
 
+      </section>
+    </main>
   );
 };
 
