@@ -6,14 +6,20 @@ import { useForm } from 'react-hook-form';
 import AsideClient from '../../components/AsideClient/AsideClient';
 import { API } from '../../services/API';
 import Button from '../../UI/Button';
+import Modal from '../../UI/Modal';
 
 const UserClientsAppoint = () => {
-  const { handleSubmit, register } = useForm();
+  const { handleSubmit, register, reset } = useForm();
+  const [clkSave, setClkSave] = useState(false);
   const [submited, setSubmited] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [admins, setAdmins] = useState([]);
   const [clinic, setClinic] = useState([]);
+  const [refresh, setRefresh] = useState(false);
 
+  const checking = () => {
+    setClkSave(!clkSave);
+  };
   const petInAppoint = JSON.parse(localStorage.getItem('pet'));
   const userLocal = JSON.parse(localStorage.getItem('user'));
 
@@ -55,7 +61,7 @@ const UserClientsAppoint = () => {
 
   useEffect(() => {
     getAdmins();
-  }, [loaded]);
+  }, [loaded, refresh]);
 
   return (
     <main className="appointMain">
@@ -105,9 +111,9 @@ const UserClientsAppoint = () => {
               >
                 <option value="nothing"></option>
                 <option value="vacuna">Vacuna</option>
-                <option value="revisi贸n">Revisi贸n</option>
+                <option value="revisión">Revisión</option>
                 <option value="consulta">Consulta</option>
-                <option value="gesti贸n">Gesti贸n</option>
+                <option value="gestión">Gestión</option>
               </select>
               <label htmlFor="reason">Motivo</label>
             </div>
@@ -123,8 +129,28 @@ const UserClientsAppoint = () => {
               {...register('comments')}
             ></textarea>
           </div>
-          <Button padding="xl" type="button" action={formSubmit} text="Solicitar" />
+          <Button
+            padding="xl"
+            type="button"
+            action={() => {
+              checking();
+              formSubmit;
+            }}
+            text="Solicitar"
+          />
         </form>
+        {submited && clkSave && (
+          <Modal
+            content="Cita solicitada, espera nuestra confirmación."
+            action={() => {
+              checking();
+              reset();
+            }}
+            text="X"
+            className="modal_cambios"
+            padding="lg"
+          />
+        )}
       </section>
     </main>
   );
