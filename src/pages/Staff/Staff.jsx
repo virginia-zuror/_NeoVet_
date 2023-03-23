@@ -16,6 +16,7 @@ const Staff = () => {
   const [newClients, setNewClients] = useState([]);
   let clientNotChecked = [];
   let petWithAppointment = [];
+  const [arraySetted, setArraySetted] = useState(false);
   const [arrayPetsAppoint, setArrayPetsAppoint] = useState([]);
   const [clkSave, setClkSave] = useState(false);
   const [submited, setSubmited] = useState(false);
@@ -32,10 +33,10 @@ const Staff = () => {
   const checkAppointments = () => {
     API.get(`/staff/${staffLogged._id}`).then((res) => {
       setStaff(res.data);
-      setLoaded(true);
     });
     API.get('/pets').then((res) => {
       setPets(res.data);
+      setLoaded(true);
     });
     staff?.appointments.map((appointment) => {
       pets.map((pet) => {
@@ -118,7 +119,7 @@ const Staff = () => {
     checkAppointments();
     checkNewClients();
     /* mapRegister(); */
-  }, [loaded, clkSave === false, loadedClients, accepted]);
+  }, [loaded, clkSave === false, loadedClients === true, accepted]);
 
   return (
     <main className="editMain staff">
@@ -127,7 +128,7 @@ const Staff = () => {
         <section className="staff_ap">
           <h2>Citas solicitadas:</h2>
           <div className="appoints">
-            {loaded ? (
+            {arrayPetsAppoint ? (
               arrayPetsAppoint.map((item, i) => (
                 <figure key={i} className="cita_pend">
                   <h4>{item.pet.name}</h4>
