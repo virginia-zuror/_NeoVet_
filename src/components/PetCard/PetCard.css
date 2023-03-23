@@ -17,3 +17,21 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (max-width: 800px) {
+  .pet_figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-size: small;
+  }
+
+  .editSection {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+  }
+}

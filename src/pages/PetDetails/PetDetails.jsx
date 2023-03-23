@@ -15,6 +15,7 @@ const PetDetails = () => {
   const getIdPet = idPet._id;
   const typeUser = JSON.parse(localStorage.getItem('user'));
   const typeOfUser = typeUser.rol;
+  console.log(idPet);
 
   const getPets = () => {
     API.get(`/pets/${getIdPet}`).then((res) => {
@@ -58,27 +59,34 @@ const PetDetails = () => {
           <div className="second-date">
             <div className="pet-details-appoints">
               <h2>Citas</h2>
-              {idPet.appoint.map((ap) => (
-                <div key={ap._id}>
-                  <h3>Fecha cita: {ap.date.toString().split('').slice(0, 10)}</h3>
-                  <h3>Razón: {ap.reason}</h3>
-                  <h3>Diagnóstico: {ap.state}</h3>
-                </div>
-              ))}
+              {idPet.appoint.length ? (
+                idPet.appoint.map((ap) => (
+                  <div className="appointmentss" key={ap._id}>
+                    <h3>{ap.date.toString().split('').slice(0, 10)}</h3>
+                    <h3>{ap.reason}</h3>
+                  </div>
+                ))
+              ) : (
+                <h2>No hay citas</h2>
+              )}
             </div>
             <Button padding="lg" text="Descargar Historial" type="submit" />
             <div className="pet-details-consults">
               <h2>Consultas</h2>
-              {idPet.record.map((re) => (
-                <div key={re._id}>
-                  <h3>Fecha consulta: {re.date.toString().split('').slice(0, 10)}</h3>
-                  <h3>Exploración: {re.exp}</h3>
-                  <h3>Diagnóstico: {re.diagnose}</h3>
-                  <h3>Tratamiento: {re.treatment}</h3>
-                  <h3>Peso: {re.weight} kg</h3>
-                  <h3>Veterinario: {re.vet}</h3>
-                </div>
-              ))}
+              {idPet.record.length ? (
+                idPet.record.map((re) => (
+                  <div className="appointmentss" key={re._id}>
+                    <h3>{re.date.toString().split('').slice(0, 10)}</h3>
+                    <h3>{re.exp}</h3>
+                    <h3>{re.diagnose}</h3>
+                    <h3>{re.treatment}</h3>
+                    <h3>{re.weight} kg</h3>
+                    <h3>{re.vet}</h3>
+                  </div>
+                ))
+              ) : (
+                <h2>No hay consultas</h2>
+              )}
             </div>
           </div>
         </div>
