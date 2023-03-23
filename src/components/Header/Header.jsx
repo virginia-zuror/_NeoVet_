@@ -65,7 +65,16 @@ const Header = () => {
         ) : (
           <>
             <li>
-              <select
+              <a href="#">Login</a>
+              <ol className="submenu">
+                <li className="menu-item">
+                  <NavLink to="/loginstaff">Login Staff</NavLink>
+                </li>
+                <li className="menu-item">
+                  <NavLink to="/loginclientes">Login Cliente</NavLink>
+                </li>
+              </ol>
+              {/* <select
                 defaultValue="default "
                 name="loginSelect"
                 onChange={(e) => {
@@ -76,7 +85,7 @@ const Header = () => {
                 <option value="default">Loguéate</option>
                 <option value="loginstaff">Login Staff</option>
                 <option value="loginclients">Login Clientes</option>
-              </select>
+              </select> */}
             </li>
             <li>
               <a href="/#formulario">
