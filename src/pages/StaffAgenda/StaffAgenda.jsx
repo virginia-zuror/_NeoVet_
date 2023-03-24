@@ -1,3 +1,5 @@
+import('./StaffAgenda.css');
+
 import React, { useEffect, useState } from 'react';
 
 import AsideStaff from '../../components/AsideStaff/AsideStaff';
@@ -63,43 +65,54 @@ const StaffAgenda = () => {
   }, [loaded === true, clkSave]);
 
   return (
-    <div className="content">
+    <main className="content">
       <AsideStaff />
-      <main>
-        {arrayPetsAppoint ? (
-          arrayPetsAppoint.map((ap) => (
-            <figure key={ap.ap._id}>
-              <h2>{ap.ap.date.toString().split('').slice(0, 10)}</h2>
-              <h4>{ap.pet.name}</h4>
-              <h4>{ap.ap.reason}</h4>
-              <div>
-                <Button
-                  text="Realizada"
-                  action={() => {
-                    changeToDone(ap.ap._id);
-                    setClkSave(true);
-                  }}
-                />
-                <Button
-                  text="cancelar"
-                  action={() => {
-                    cancelAp(ap.ap._id);
-                    setClkSave(true);
-                  }}
-                />
-              </div>
-              {submited === true && clkSave === true ? (
-                <Modal content="Cambio realizado" text="X" action={() => checking()} />
-              ) : (
-                ''
-              )}
-            </figure>
-          ))
-        ) : (
-          <h2>No hay citas</h2>
-        )}
-      </main>
-    </div>
+      <div className="agenda_staff">
+        <h2>Citas programadas:</h2>
+        <div className="appoints app_staff">
+          <div className="header_grid">
+            <h2>Fecha</h2>
+            <h2>Nombre</h2>
+            <h2>Motivo</h2>
+            <h2>Opciones</h2>
+          </div>
+          {arrayPetsAppoint ? (
+            arrayPetsAppoint.map((ap) => (
+              <figure className="cita" key={ap.ap._id}>
+                <h3>{ap.ap.date.toString().split('').slice(0, 10)}</h3>
+                <h4>{ap.pet.name}</h4>
+                <h4>{ap.ap.reason}</h4>
+                <div className="btns_appoints">
+                  <Button
+                    text="Realizada"
+                    action={() => {
+                      changeToDone(ap.ap._id);
+                      setClkSave(true);
+                    }}
+                    padding="lg"
+                  />
+                  <Button
+                    text="Cancelar"
+                    action={() => {
+                      cancelAp(ap.ap._id);
+                      setClkSave(true);
+                    }}
+                    padding="lg"
+                  />
+                </div>
+                {submited === true && clkSave === true ? (
+                  <Modal content="Cambio realizado" text="X" action={() => checking()} />
+                ) : (
+                  ''
+                )}
+              </figure>
+            ))
+          ) : (
+            <h2>No hay citas pendientes</h2>
+          )}
+        </div>
+      </div>
+    </main>
   );
 };
 

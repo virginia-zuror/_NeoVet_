@@ -4,8 +4,10 @@ nav{
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	height: 5rem;
+	height: fit-content;
 	width: 100%;
+  padding: 0 1rem;
+  
 }
 
 nav > img{
@@ -15,6 +17,8 @@ nav > img{
 
 nav ul {
   display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 nav ul li {
@@ -80,15 +84,14 @@ nav ul li ul li a:hover{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 1rem;
   color: var(--primarycolor);
   margin-right: 3rem;
 }
 
 @media only screen and (max-width: 768px) {
-  nav{
-    height: 8rem;
-  }
+  
   nav > img{
     margin: auto;
   }
@@ -97,9 +100,11 @@ nav ul li ul li a:hover{
     width: 100%;
     display: flex;
     justify-content: center;
+    padding-bottom:1rem;
   }
 
   nav ul li:hover ul{
     width: 9rem;
   }
+  
 }
