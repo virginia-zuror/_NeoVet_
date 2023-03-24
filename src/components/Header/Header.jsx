@@ -55,16 +55,16 @@ const Header = () => {
             </li>
           </>
         )}
-        <li>
+        <li className="user">
           {user && typeUser.rol === 'userClient' && (
             <div className="avatar-staff">
-              <h4>Bievenide, {user.name}</h4>
+              <h5>{user.name}</h5>
             </div>
           )}
           {user && typeUser.rol === 'userAdmin' && (
             <div className="avatar-staff">
               <div>
-                <h4>{user.name}</h4>
+                <h5>{user.name}</h5>
                 <p>{user.position}</p>
               </div>
               <img src={user.avatar} alt={user.avatar} />

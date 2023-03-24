@@ -4,9 +4,9 @@ nav{
 	align-items: center;
 	justify-content: space-between;
 	flex-wrap: wrap;
-	height: fit-content;
+	height: auto;
 	width: 100%;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   
 }
 
@@ -25,7 +25,14 @@ nav ul li {
   list-style: none;
   position: relative;
 }
+.user{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: row;
 
+}
 nav ul li a{
   display: block;
   padding: 0rem 2rem;
@@ -70,16 +77,8 @@ nav ul li ul li a:hover{
 .logout-li{
   display: flex;
   align-items: center;
-  margin: 1rem;
+  
 }
-
-.avatar-staff > img {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
 .avatar-staff {
   display: flex;
   justify-content: center;
@@ -87,8 +86,18 @@ nav ul li ul li a:hover{
   flex-wrap: nowrap;
   gap: 1rem;
   color: var(--primarycolor);
-  margin-right: 3rem;
+  font-size: 18px;
 }
+.avatar-staff > img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: cover;
+  
+  
+}
+
+
 
 @media only screen and (max-width: 768px) {
   
