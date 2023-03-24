@@ -59,12 +59,25 @@
 
 .appointmentss {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   width: 100%;
   align-items: center;
   gap: 1rem;
 }
-
-.appointmentss > h3 {
-  width: 150px;
+.appointmentss > .firstLine{
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
+.firstLine>.dato{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
