@@ -14,34 +14,30 @@ nav > img{
 }
 
 nav ul {
-    float: left;
-    display: flex;
+  display: flex;
 }
 
 nav ul li {
-    float: left;
-    list-style: none;
-    position: relative;
+  list-style: none;
+  position: relative;
 }
 
-nav ul li a {
-    display: block;
-    padding: 0rem 2rem;
-    line-height: 5rem;
-    color: white;
-    text-decoration: none;
-    
+nav ul li a{
+  display: block;
+  padding: 0rem 2rem;
+  line-height: 5rem;
+  color: var(--primarycolor);
+  text-decoration: none;
 }
 
 nav ul li a:hover{
-  font-weight: 600;
+  color:#ffbd5c;
 }
 
 nav ul li ul {
     display: none;
     position: absolute;
     background-color: var(--primarycolor);
-    border-radius: 8px;
 }
 
 nav ul li:hover ul {
@@ -59,12 +55,13 @@ nav ul li ul li a {
   line-height: unset;
   white-space: nowrap;
   z-index: 9999;
+  background-color: var(--primarycolor);
 }
 
 nav ul li ul li a:hover{
     background-color:rgb(206, 220, 227);
-    border-radius: 8px;
-  }
+    color: var(--secondarycolor);
+}
 
 .logout-li{
   display: flex;
@@ -84,4 +81,25 @@ nav ul li ul li a:hover{
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  color: var(--primarycolor);
+  margin-right: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  nav{
+    height: 8rem;
+  }
+  nav > img{
+    margin: auto;
+  }
+
+  nav ul {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  nav ul li:hover ul{
+    width: 9rem;
+  }
 }
