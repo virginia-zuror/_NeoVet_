@@ -3,7 +3,8 @@ import './userClientsAgenda.css';
 import { useEffect, useState } from 'react';
 
 import AsideClient from '../../components/AsideClient/AsideClient';
-import Button from '../../UI/Button'
+import Button from '../../UI/Button';
+import Modal from '../../UI/Modal';
 import { API } from '../../services/API';
 
 const UserClientsAgenda = () => {
@@ -14,6 +15,7 @@ const UserClientsAgenda = () => {
   const [loaded, setLoaded] = useState(false);
   const [petByUser, setPetByUser] = useState();
   const [deletedAppointment, setDeletedAppointment] = useState("");
+  const [clkSave, setClkSave] = useState(false);
   
 
   let pets = [];
@@ -40,11 +42,15 @@ const UserClientsAgenda = () => {
     });
   };
 
+  const checking = () => {
+    setClkSave(!clkSave);
+  };
+
   useEffect(() => {
     getAllPets();
     console.log(pendingAppointByPet);
     console.log(petByUser);
-  }, [loaded === true], [deletedAppointment]);
+  }, [loaded === true, clkSave === false]);
 
   return (
     <div className="content">
@@ -63,10 +69,14 @@ const UserClientsAgenda = () => {
                   <h4>Comentarios:</h4>
                   <p>{ap.comments}</p>
                   <p>{ap._id}</p>
-                  <Button text="Eliminar cita" action={ () => {
+                  <Button text="Eliminar cita" padding="lg" action={ () => {
                     pendingAppointByPet = ap._id;
                     deleteAppointment(pendingAppointByPet);
+                    checking();
                   }} />
+                  {clkSave && <Modal content="Cita eliminada" text="x" action = { () => {
+                    checking();
+                  } }/>}
                 </figure>
               ),
               //: (
