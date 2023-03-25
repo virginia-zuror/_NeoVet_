@@ -16,7 +16,7 @@ const Staff = () => {
   const [newClients, setNewClients] = useState([]);
   let clientNotChecked = [];
   let petWithAppointment = [];
-  const [arraySetted, setArraySetted] = useState(false);
+  /* const [arraySetted, setArraySetted] = useState(false); */
   const [arrayPetsAppoint, setArrayPetsAppoint] = useState([]);
   const [clkSave, setClkSave] = useState(false);
   const [submited, setSubmited] = useState(false);
@@ -115,13 +115,13 @@ const Staff = () => {
   }, [loaded, clkSave === false, loadedClients === true, accepted]);
 
   return (
-    <main className="editMain staff">
+    <main className="staff_overview">
       <AsideStaff />
       <div className="window">
         <section className="staff_ap">
           <h2>Citas solicitadas:</h2>
           <div className="appoints">
-            {arrayPetsAppoint ? (
+            {arrayPetsAppoint.length ? (
               arrayPetsAppoint.map((item, i) => (
                 <figure key={i} className="cita_pend">
                   <h4>{item.pet.name}</h4>
@@ -163,7 +163,7 @@ const Staff = () => {
                 </figure>
               ))
             ) : (
-              <h2>Loading...</h2>
+              <h4>No existen citas pendientes de confirmación</h4>
             )}
           </div>
         </section>

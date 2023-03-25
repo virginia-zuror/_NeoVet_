@@ -44,7 +44,7 @@ const Pets = () => {
             filterFunction(ev.target.value.toLowerCase());
           }}
         />
-        <div className="grid-pets">
+        <div className="grid-patients">
           {loaded ? (
             filter.length ? (
               filter.map((pet, index) => (
