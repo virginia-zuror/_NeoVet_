@@ -14,17 +14,9 @@ const UserClients = () => {
   const [mascotas, setMascotas] = useState([]);
   const [loaded, setLoaded] = useState(false);
   const [allUsers, setAllUsers] = useState([]);
-  const [details, setDetails] = useState('');
   const userLoged = JSON.parse(localStorage.getItem('user'));
-  //const getIdPet = idPet._id;
-  console.log(userLoged.pets);
 
-  /*const getPetsById = () => {
-    API.get(`/pets/${getIdPet}`).then((res) => {
-      setDetails(res.data);
-      console.log(res.data);
-    });
-  };*/
+  console.log(userLoged.pets);
 
   const getPets = () => {
     API.get('/userclients').then((res) => {
@@ -37,41 +29,44 @@ const UserClients = () => {
 
   useEffect(() => {
     getPets();
-    //getPetsById();
   }, [loaded]);
 
   return (
     <div>
       <main className="clientOverviewMain">
         <AsideClient />
-        <section className="clientOverviewSection">
-          <h3>Tus mascotas</h3>
 
-          {loaded ? (
-            mascotas?.map((mascota) => (
-              <div className="grid-userclients" key={mascota._id}>
-                <PetCard pet={mascota} />
-                <Button
-                  text="Pedir Cita"
-                  padding="lg"
-                  action={() => {
-                    localStorage.setItem('pet', JSON.stringify(mascota));
-                    navigate('/userclients_appoint');
-                  }}
-                />
-                <Button
-                  text="Ver Perfil"
-                  padding="lg"
-                  action={() => {
-                    localStorage.setItem('pet', JSON.stringify(mascota));
-                    navigate('/userclients/:id');
-                  }}
-                />
-              </div>
-            ))
-          ) : (
-            <h2>Loading...</h2>
-          )}
+        <section className="clientOverviewSection">
+          <h2>Tus mascotas</h2>
+          <div className="grid-userclients">
+            {loaded ? (
+              mascotas?.map((mascota) => (
+                <div key={mascota._id}>
+                  <PetCard pet={mascota} />
+                  <div className="buts_pets">
+                    <Button
+                      text="Pedir Cita"
+                      padding="lg"
+                      action={() => {
+                        localStorage.setItem('pet', JSON.stringify(mascota));
+                        navigate('/userclients_appoint');
+                      }}
+                    />
+                    <Button
+                      text="Ver Perfil"
+                      padding="lg"
+                      action={() => {
+                        localStorage.setItem('pet', JSON.stringify(mascota));
+                        navigate('/userclients/:id');
+                      }}
+                    />
+                  </div>
+                </div>
+              ))
+            ) : (
+              <h2>Loading...</h2>
+            )}
+          </div>
         </section>
       </main>
     </div>
