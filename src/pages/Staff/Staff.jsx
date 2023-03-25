@@ -23,7 +23,6 @@ const Staff = () => {
   const [accepted, setAccepted] = useState(false);
   const staffLogged = JSON.parse(localStorage.getItem('user'));
 
-
   const [staff, setStaff] = useState();
   const checkAppointments = () => {
     API.get(`/staff/${staffLogged._id}`).then((res) => {

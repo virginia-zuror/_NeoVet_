@@ -37,7 +37,7 @@ const LoginClient = () => {
   const onChange = ({ currentTarget }) => currentTarget.value;
 
   return (
-    <main>
+    <main className="loginClient_main">
       <h2>Login Clientes</h2>
       <form onSubmit={handleSubmit(formSubmit)}>
         <div className="container">

@@ -44,7 +44,6 @@
   height: 10rem;
 }
 
-
 @media screen and (max-width: 800px) {
   .appointMain {
     display: flex;
@@ -60,7 +59,7 @@
     align-items: center;
     margin: 2rem;
   }
-  
+
   .appointSection {
     width: 100%;
     display: flex;
@@ -86,7 +85,7 @@
     align-items: center;
   }
 
-  .comments{
+  .comments {
     width: 320px;
     display: flex;
     justify-content: center;
@@ -96,11 +95,11 @@
   .container {
     justify-content: center;
   }
-  .comments{
+  .comments {
     width: 80vw;
   }
-  .container select, button{
+  .container select,
+  button {
     width: 80vw;
   }
 }
-

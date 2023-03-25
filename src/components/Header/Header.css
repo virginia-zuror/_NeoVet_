@@ -1,16 +1,15 @@
-nav{
-	background-color: rgb(74, 153, 187);
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	height: auto;
-	width: 100%;
+nav {
+  background-color: rgb(74, 153, 187);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: auto;
+  width: 100%;
   padding: 0 1.5rem;
-  
 }
 
-nav > img{
+nav > img {
   width: 150px;
   margin-left: 3rem;
 }
@@ -25,15 +24,14 @@ nav ul li {
   list-style: none;
   position: relative;
 }
-.user{
+.user {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   flex-direction: row;
-
 }
-nav ul li a{
+nav ul li a {
   display: block;
   padding: 0rem 2rem;
   line-height: 5rem;
@@ -41,27 +39,27 @@ nav ul li a{
   text-decoration: none;
 }
 
-nav ul li a:hover{
-  color:#ffbd5c;
+nav ul li a:hover {
+  color: #ffbd5c;
 }
 
 nav ul li ul {
-    display: none;
-    position: absolute;
-    background-color: var(--primarycolor);
+  display: none;
+  position: absolute;
+  background-color: var(--primarycolor);
 }
 
 nav ul li:hover ul {
-    display: block;
+  display: block;
 }
 
-nav ul li ul li  {
-    width: 100%;
+nav ul li ul li {
+  width: 100%;
 }
 
 nav ul li ul li a {
   position: relative;
-	color:rgb(50, 49, 49);
+  color: rgb(50, 49, 49);
   padding: 1rem 2rem;
   line-height: unset;
   white-space: nowrap;
@@ -69,15 +67,14 @@ nav ul li ul li a {
   background-color: var(--primarycolor);
 }
 
-nav ul li ul li a:hover{
-    background-color:rgb(206, 220, 227);
-    color: var(--secondarycolor);
+nav ul li ul li a:hover {
+  background-color: rgb(206, 220, 227);
+  color: var(--secondarycolor);
 }
 
-.logout-li{
+.logout-li {
   display: flex;
   align-items: center;
-  
 }
 .avatar-staff {
   display: flex;
@@ -93,15 +90,10 @@ nav ul li ul li a:hover{
   height: 3rem;
   border-radius: 50%;
   object-fit: cover;
-  
-  
 }
 
-
-
 @media only screen and (max-width: 768px) {
-  
-  nav > img{
+  nav > img {
     margin: auto;
   }
 
@@ -109,11 +101,10 @@ nav ul li ul li a:hover{
     width: 100%;
     display: flex;
     justify-content: center;
-    padding-bottom:1rem;
+    padding-bottom: 1rem;
   }
 
-  nav ul li:hover ul{
+  nav ul li:hover ul {
     width: 9rem;
   }
-  
 }

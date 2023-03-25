@@ -67,7 +67,11 @@ const UserClientsAppoint = () => {
     <main className="appointMain">
       <AsideClient />
       <section className="appointSection">
-        <form onSubmit={handleSubmit(formSubmit)} id="create_appoint" className='form-pedir-cita'>
+        <form
+          onSubmit={handleSubmit(formSubmit)}
+          id="create_appoint"
+          className="form-pedir-cita"
+        >
           <h2>Solicitud de cita</h2>
           <div className="firstRow">
             <div className="container">

@@ -1,0 +1,9 @@
+.loginStaff_main {
+  height: 75vh;
+}
+
+@media only screen and (max-width: 768px) {
+  .loginStaff_main {
+    height: 70vh;
+  }
+}

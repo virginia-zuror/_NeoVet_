@@ -38,7 +38,7 @@ const LoginStaff = () => {
   const onChange = ({ currentTarget }) => currentTarget.value;
 
   return (
-    <main>
+    <main className="loginStaff_main">
       <h2>Login Profesionales</h2>
       <form className="form-loginstaff" onSubmit={handleSubmit(formSubmit)}>
         <div className="container">
