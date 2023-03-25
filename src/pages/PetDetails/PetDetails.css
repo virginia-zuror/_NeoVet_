@@ -70,14 +70,14 @@
   gap: 1rem;
   padding: 1rem;
 }
-.appointmentss > .firstLine{
+.appointmentss > .firstLine {
   width: 40%;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
-.firstLine>.dato{
+.firstLine > .dato {
   display: flex;
   flex-direction: row;
   width: 50%;
@@ -85,7 +85,6 @@
   justify-content: center;
   gap: 1rem;
 }
-
 
 .pet-details {
   width: 60%;
@@ -102,37 +101,33 @@
   .pet-details {
     width: 100%;
   }
-.asideMobileLinks {
-  display: flex;
-  justify-content: center;
+  .asideMobileLinks {
+    display: flex;
+    justify-content: center;
+  }
+  .firstLine {
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+  }
+
+  .first-date {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .appointmentss {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dato {
+    width: auto;
+  }
 }
-.firstLine {
-  gap: 5rem;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 100vw;
-}
-
-.first-date {
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-
-}
-
-.appointmentss {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.dato {
-  width: auto;
-}
-
-
-}
-

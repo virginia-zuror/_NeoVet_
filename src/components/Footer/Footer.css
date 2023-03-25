@@ -38,8 +38,8 @@
 .footerBody > div > h2 {
   color: var(--highlightcolor);
 }
-@media only screen and (max-width: 600px){
-  .pages{
+@media only screen and (max-width: 600px) {
+  .pages {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -48,14 +48,14 @@
     flex-wrap: wrap;
     gap: 1rem;
   }
-  .footerBody>div{
+  .footerBody > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
   }
-  .corporative{
+  .corporative {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

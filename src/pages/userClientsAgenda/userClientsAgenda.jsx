@@ -54,15 +54,15 @@ const UserClientsAgenda = () => {
   return (
     <main className="content">
       <AsideClient />
-      <section>
+      <section className="staff_ap_agenda">
         <h2>Citas solicitadas:</h2>
-        <div className="clientAp">
+        <div className="appoints_agenda">
           {loaded === true ? (
             petByUser.map((pet) =>
               pet.appoint.map(
                 (ap) =>
                   ap.state === 'pending' && (
-                    <figure className="apByPet" key={ap._id}>
+                    <figure className="cita_pend_agenda" key={ap._id}>
                       <h4>{pet.name}</h4>
                       <h5>{pet.specie}</h5>
                       <div>
@@ -90,6 +90,7 @@ const UserClientsAgenda = () => {
                         <Modal
                           content="Cita eliminada"
                           text="x"
+                          className="modal_cambios"
                           action={() => {
                             checking();
                           }}
