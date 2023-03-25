@@ -49,6 +49,8 @@
   .appointMain {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    gap: 0;
   }
 
   .form-pedir-cita {
@@ -56,15 +58,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 2rem;
   }
   
   .appointSection {
-    width: auto;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin-left: 2rem;
+    margin: 0;
+    padding: 0;
   }
 
   .secondRow {
@@ -72,7 +76,7 @@
     width: 100%;
     justify-content: space-around;
     align-items: center;
-
+    flex-direction: column;
   }
 
   .firstRow {
@@ -91,6 +95,12 @@
 
   .container {
     justify-content: center;
+  }
+  .comments{
+    width: 80vw;
+  }
+  .container select, button{
+    width: 80vw;
   }
 }
 
