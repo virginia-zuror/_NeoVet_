@@ -23,7 +23,7 @@
 
 .hero-text-container {
   width: 38%;
- 
+
   margin-left: 100px;
 }
 
@@ -61,7 +61,7 @@
   position: relative;
   object-position: top;
   font-size: 2.5em;
-  
+
   margin-bottom: 2rem;
   margin: 0 0 2rem 0;
   width: 20vw;
@@ -73,11 +73,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-content: center;
- 
-  gap: 0.9rem;
 
+  gap: 0.9rem;
 }
-.btn_reg{
+.btn_reg {
   width: 100%;
   padding-right: 1.5rem;
   display: flex;
@@ -97,8 +96,8 @@ select {
   border-radius: 12px;
   color: var(--secondarycolor);
 }
-#admins{
-  width:14rem;
+#admins {
+  width: 14rem;
 }
 
 label {
@@ -154,12 +153,11 @@ input:valid {
     flex-direction: column;
     text-align: center;
   }
-.hero-text-description{
-  font-size:medium;
-  width: 70%;
-  text-align: center;
-  
-}
+  .hero-text-description {
+    font-size: medium;
+    width: 70%;
+    text-align: center;
+  }
   .register-section {
     height: auto;
     width: 100%;
@@ -170,7 +168,6 @@ input:valid {
     width: 90%;
     padding: 0 2rem 0 2rem;
     gap: 0;
-   
   }
 
   #formulario {
@@ -180,15 +177,14 @@ input:valid {
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
-    
   }
-  #formulario > .formulario{
+  #formulario > .formulario {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
   }
-  #formulario > .btn_reg{
+  #formulario > .btn_reg {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -212,13 +208,11 @@ input:valid {
   padding-left: 4rem;
   padding-right: 4rem;
   padding-top: 1rem;
-      align-content: center;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
 }
-
-
 
 .staff-section > figure {
   background: rgba(255, 255, 255, 0.25);
@@ -233,16 +227,16 @@ input:valid {
   scale: 1.1;
   transition: 0.5s all ease-in-out;
 }
-.modal_registro{
+.modal_registro {
   z-index: 2;
 }
-.modaltext_home{
+.modaltext_home {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   text-align: justify;
 }
-.modaltext_home > h3{
+.modaltext_home > h3 {
   color: var(--highlightcolor);
 }
