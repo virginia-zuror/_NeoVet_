@@ -117,7 +117,7 @@ const Staff = () => {
   return (
     <main className="staff_overview">
       <AsideStaff />
-      <div className="window">
+      <div className="window-staff">
         <section className="staff_ap">
           <h2>Citas solicitadas:</h2>
           <div className="appoints">

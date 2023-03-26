@@ -71,7 +71,7 @@
   padding: 1rem;
 }
 .appointmentss > .firstLine {
-  width: 40%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -80,10 +80,11 @@
 .firstLine > .dato {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   width: 50%;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: .5rem;
 }
 
 .pet-details {
@@ -91,8 +92,17 @@
 }
 
 @media screen and (max-width: 800px) {
+  .patients{
+    padding: 0rem 1rem;
+    width: 100%;
+    margin-top: 0;
+  }
+  
+  .global-date{
+    padding: 1rem 0;
+    width: 100%;
+  }
   .asideMobile {
-    width: 100vw;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -101,15 +111,25 @@
   .pet-details {
     width: 100%;
   }
+
+  .pet-details-appoints{
+    width: 100%;
+  }
+
+  .pet-details-consults{
+    width: 100%;
+  }
+
   .asideMobileLinks {
     display: flex;
     justify-content: center;
   }
-  .firstLine {
-    gap: 5rem;
+  .appointmentss > .firstLine {
+    gap: 1rem;
     justify-content: center;
     align-items: center;
     text-align: center;
+    flex-direction: column;
     width: 100vw;
   }
 
@@ -128,6 +148,6 @@
   }
 
   .dato {
-    width: auto;
+    width: 100%;
   }
 }

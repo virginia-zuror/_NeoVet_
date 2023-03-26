@@ -9,9 +9,8 @@
   margin: 0 0;
   width: 100%;
   height: auto;
-
 }
-.window {
+.window-staff {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -21,6 +20,7 @@
   padding-top: 2rem;
   width: 75%;
   height: auto;
+  color: var(--secondarycolor);
 }
 .staff_ap {
   max-width: 60%;
@@ -60,11 +60,15 @@
 .appoints > :nth-child(odd) {
   background-color: rgba(74, 153, 187, 30%);
 }
+
+.registros > :nth-child(odd) {
+  background-color: rgba(74, 153, 187, 30%);
+}
+
 .registros {
   padding-top: 16px;
   display: flex;
   flex-direction: column;
-
   gap: 1rem;
 }
 .cita_pend {
@@ -77,6 +81,10 @@
   padding: 0.5rem;
 }
 
+.reg_pend{
+  padding: 1rem 2.5rem;
+}
+
 @media only screen and (max-width: 768px) {
   .staff_overview {
     width: 100%;
@@ -84,27 +92,35 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 0;
+    margin-top: 0;
     height: auto;
-    padding: auto;
+    gap: 0;
   }
-  .window {
+  .window-staff {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0;
-    
+    padding-top: 2rem;
+    gap: 2rem;
+    height: auto;
   }
   .staff_ap,
   .staff_rg {
-    max-width: 100%;
+    min-width: 90%;
     margin: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    padding: 0;
+  }
+
+  .staff_rg{
+    margin-bottom: 2rem;
   }
   .appoints {
     width: 100%;
@@ -128,11 +144,14 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    width: 100%;
   }
   .reg_pend {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%;
+    padding: .5rem 0;
   }
 }
