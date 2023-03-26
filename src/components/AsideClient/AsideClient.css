@@ -64,13 +64,16 @@
   .aside {
     display: none;
   }
+
+  .asideContainer{
+    margin: auto;
+  }
   .asideMobile {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    
   }
 
   .asideMobileLinks {

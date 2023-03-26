@@ -15,6 +15,7 @@
   color: var(--highlightcolor);
   width: 75vw;
   padding-right: 18rem;
+  margin-top: 2rem;;
 }
 
 .appointSection > input {
@@ -44,13 +45,20 @@
   height: 10rem;
 }
 
+.secondRow > .container-admins{
+  width: 100%;
+}
+
+.secondRow > .container-admins > select {
+  width: 100%;
+}
 
 @media screen and (max-width: 800px) {
   .appointMain {
     display: flex;
     flex-direction: column;
     margin: 0;
-    gap: 0;
+    gap: 1rem;
   }
 
   .form-pedir-cita {
@@ -99,7 +107,7 @@
   .comments{
     width: 80vw;
   }
-  .container select, button{
+  .container select{
     width: 80vw;
   }
 }
