@@ -36,6 +36,7 @@
     justify-content: center;
     width: 100%;
     gap: 1rem;
+    margin-top: 0rem;
   }
   .window{
     display: flex;

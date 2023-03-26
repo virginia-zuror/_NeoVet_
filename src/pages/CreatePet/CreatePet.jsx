@@ -38,9 +38,9 @@ const CreatePet = () => {
   };
 
   return (
-    <div>
+    <main className="createpet-page">
       <AsideClient />
-      <main>
+      <div className="createpet-section">
         <h2>Añade una mascota</h2>
         <form onSubmit={handleSubmit(formSubmit)} id="formulario_edit">
           <div className="container">
@@ -91,11 +91,11 @@ const CreatePet = () => {
             />
             <label htmlFor="gender">Género</label>
           </div>
-          <div className="container">
-            <input type="file" id="photo" name="photo" {...register('photo')} />
-            <label htmlFor="photo">Photo</label>
-          </div>
-          <Button
+            <div className="container">
+              <input type="file" id="photo" name="photo" {...register('photo')} />
+              <label htmlFor="photo">Foto</label>
+            </div>
+            <Button
             text="Guardar cambios"
             type="button"
             action={() => {
@@ -114,8 +114,8 @@ const CreatePet = () => {
             padding="lg"
           />
         )}
-      </main>
-    </div>
+      </div>
+    </main>
   );
 };
 
