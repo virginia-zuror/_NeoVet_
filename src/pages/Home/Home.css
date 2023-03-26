@@ -191,11 +191,23 @@ input:valid {
   }
 
   .container-pwd {
-    margin-left: 1.8rem;
+    width: 99%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: .9rem;
   }
 
   .pass_visual {
     margin-left: 10px;
+  }
+
+  #pwd{
+    width: 100%;
+  }
+
+  .container-admins, #admins{
+    width: 100%;
   }
 }
 
