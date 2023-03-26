@@ -1,25 +1,22 @@
-.createpet-page{
-    flex-direction: row;
+.createpet-page {
+  flex-direction: row;
 }
 
-.createpet-section > h2{
-    color: var(--highlightcolor);
+.createpet-section > h2 {
+  color: var(--highlightcolor);
 }
 
-.createpet-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.createpet-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .createpet-page {
     flex-direction: column;
-    gap: 2rem;
+    margin-top: 0;
+  }
 }
-
-@media screen and (max-width: 800px){
-    .createpet-page{
-        flex-direction: column;
-        margin-top: 0;
-    }
-}
-
-
-

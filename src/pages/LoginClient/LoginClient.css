@@ -49,12 +49,11 @@ form > a:hover {
   .container > #password {
     width: 70vw;
   }
-  
+
   .form-loginstaff > .container {
     gap: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
 }

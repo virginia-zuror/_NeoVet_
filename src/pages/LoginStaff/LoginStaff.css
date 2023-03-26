@@ -13,18 +13,15 @@
   align-self: flex-start;
 }
 
-
 @media only screen and (max-width: 768px) {
   .loginStaff_main {
     height: 70vh;
   }
 
-  
   .form-loginstaff > .container {
     gap: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
 }

@@ -39,7 +39,7 @@ const LoginClient = () => {
   return (
     <main className="loginClient_main">
       <h2>Login Clientes</h2>
-      <form  className="form-loginstaff" onSubmit={handleSubmit(formSubmit)}>
+      <form className="form-loginstaff" onSubmit={handleSubmit(formSubmit)}>
         <div className="container">
           <input
             type="text"
