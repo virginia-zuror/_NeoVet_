@@ -62,5 +62,7 @@
     width: 100%;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    gap: 1rem;
   }
 }

@@ -64,6 +64,10 @@
   .aside {
     display: none;
   }
+
+  .asideContainer{
+    margin: auto;
+  }
   .asideMobile {
     width: 100%;
     display: flex;
