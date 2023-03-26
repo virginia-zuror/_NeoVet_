@@ -56,3 +56,58 @@ textarea {
 textarea:focus {
   border: 2px solid var(--highlightcolor);
 }
+
+@media screen and (max-width: 800px){
+
+  .consultMain {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    width: 100%;
+    padding: 0;
+  }
+
+  .consultSection {
+    width: 100%;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #create_consult {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .filasup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: ;
+  }
+
+  .filamed {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+  }
+
+  textarea {
+    width: 100%;
+  }
+
+  .filamed > div {
+    width: 90%;
+  }
+
+  #create_consult > button {
+    width: 80%;
+  }
+
+  }
