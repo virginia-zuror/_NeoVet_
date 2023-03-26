@@ -15,7 +15,7 @@
   color: var(--highlightcolor);
   width: 75vw;
   padding-right: 18rem;
-  margin-top: 2rem;;
+  margin-top: 2rem;
 }
 
 .appointSection > input {
@@ -45,7 +45,7 @@
   height: 10rem;
 }
 
-.secondRow > .container-admins{
+.secondRow > .container-admins {
   width: 100%;
 }
 
@@ -108,8 +108,8 @@
   .comments {
     width: 80vw;
   }
-  
-  .container select{
+
+  .container select {
     width: 80vw;
   }
 }

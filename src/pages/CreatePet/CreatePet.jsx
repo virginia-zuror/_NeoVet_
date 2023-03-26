@@ -91,11 +91,11 @@ const CreatePet = () => {
             />
             <label htmlFor="gender">Género</label>
           </div>
-            <div className="container">
-              <input type="file" id="photo" name="photo" {...register('photo')} />
-              <label htmlFor="photo">Foto</label>
-            </div>
-            <Button
+          <div className="container">
+            <input type="file" id="photo" name="photo" {...register('photo')} />
+            <label htmlFor="photo">Foto</label>
+          </div>
+          <Button
             text="Guardar cambios"
             type="button"
             action={() => {

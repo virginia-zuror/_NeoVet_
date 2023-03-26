@@ -195,18 +195,19 @@ input:valid {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
-    gap: .9rem;
+    gap: 0.9rem;
   }
 
   .pass_visual {
     margin-left: 10px;
   }
 
-  #pwd{
+  #pwd {
     width: 100%;
   }
 
-  .container-admins, #admins{
+  .container-admins,
+  #admins {
     width: 100%;
   }
 }

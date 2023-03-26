@@ -57,8 +57,7 @@ textarea:focus {
   border: 2px solid var(--highlightcolor);
 }
 
-@media screen and (max-width: 800px){
-
+@media screen and (max-width: 800px) {
   .consultMain {
     flex-direction: column;
     justify-content: center;
@@ -109,5 +108,4 @@ textarea:focus {
   #create_consult > button {
     width: 80%;
   }
-
-  }
+}

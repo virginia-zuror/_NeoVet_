@@ -6,6 +6,7 @@ import AsideClient from '../../components/AsideClient/AsideClient';
 import AsideStaff from '../../components/AsideStaff/AsideStaff';
 import { API } from '../../services/API';
 import Button from '../../UI/Button';
+import GenericPdfDownloader from '../../components/PdfGenerator/PdfGenerator';
 
 const PetDetails = () => {
   const [details, setDetails] = useState([]);
@@ -41,7 +42,7 @@ const PetDetails = () => {
   return (
     <main className="patients">
       {typeOfUser === 'userAdmin' ? <AsideStaff /> : <AsideClient />}
-      <section className="pet-details">
+      <section className="pet-details" id="pet-details">
         <div className="global-date">
           <div className="first-date">
             <img src={petInView.photo} alt={petInView.name} />
@@ -67,8 +68,11 @@ const PetDetails = () => {
                 <h3>No hay citas confirmadas</h3>
               )}
             </div>
-            <Button padding="lg" text="Descargar Historial" type="submit" />
-            <div className="pet-details-consults">
+            <GenericPdfDownloader
+              downloadFileName="CustomPdf"
+              rootElementId="pet_details_consults"
+            />
+            <div className="pet-details-consults" id="pet_details_consults">
               <h2>Consultas</h2>
               {petInView.record?.length ? (
                 petInView.record.map((re) => (

@@ -60,7 +60,7 @@
     margin-top: 0;
     gap: 1rem;
     width: 100%;
-    padding: 0rem .2rem;
+    padding: 0rem 0.2rem;
   }
   .editsection {
     display: flex;
@@ -78,11 +78,11 @@
     height: auto;
   }
 
-  .container input{
+  .container input {
     width: 80vw;
   }
 
-  #formulario_edit{
+  #formulario_edit {
     width: 100%;
   }
 }
