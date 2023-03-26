@@ -41,12 +41,15 @@ const UserClientsStaff = () => {
   return (
     <main className="userClientStaffMain">
       <AsideClient />
-      <section className="staff-section">
-        {clinic.staff ? (
-          clinic.staff.map((st) => <StaffCard key={st._id} st={st} />)
-        ) : (
-          <h3>Loading...</h3>
-        )}
+      <section className="window">
+        <h2>Nuestro equipo:</h2>
+        <div className="staff-section">
+          {clinic.staff ? (
+            clinic.staff.map((st) => <StaffCard key={st._id} st={st} />)
+          ) : (
+            <h3>Loading...</h3>
+          )}
+        </div>
       </section>
     </main>
   );

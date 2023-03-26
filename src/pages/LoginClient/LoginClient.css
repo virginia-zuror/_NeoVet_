@@ -36,3 +36,13 @@ form > a {
 form > a:hover {
   opacity: 50%;
 }
+
+.loginClient_main {
+  height: 75vh;
+}
+
+@media only screen and (max-width: 768px) {
+  .loginClient_main {
+    height: 70vh;
+  }
+}

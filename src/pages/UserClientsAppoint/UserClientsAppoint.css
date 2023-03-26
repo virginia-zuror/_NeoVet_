@@ -68,7 +68,7 @@
     align-items: center;
     margin: 2rem;
   }
-  
+
   .appointSection {
     width: 100%;
     display: flex;
@@ -94,7 +94,7 @@
     align-items: center;
   }
 
-  .comments{
+  .comments {
     width: 320px;
     display: flex;
     justify-content: center;
@@ -104,11 +104,11 @@
   .container {
     justify-content: center;
   }
-  .comments{
+  .comments {
     width: 80vw;
   }
+  
   .container select{
     width: 80vw;
   }
 }
-
