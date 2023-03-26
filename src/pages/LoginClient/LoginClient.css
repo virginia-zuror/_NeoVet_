@@ -42,7 +42,19 @@ form > a:hover {
 }
 
 @media only screen and (max-width: 768px) {
-  .loginClient_main {
+  .loginStaff_main {
     height: 70vh;
   }
+
+  .container > #password {
+    width: 70vw;
+  }
+  
+  .form-loginstaff > .container {
+    gap: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 }
