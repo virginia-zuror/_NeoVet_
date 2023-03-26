@@ -39,7 +39,7 @@ const PetDetails = () => {
   }, [loaded, petInView.length >= 0]);
 
   return (
-    <main className="editMain patients">
+    <main className="patients">
       {typeOfUser === 'userAdmin' ? <AsideStaff /> : <AsideClient />}
       <section className="pet-details">
         <div className="global-date">

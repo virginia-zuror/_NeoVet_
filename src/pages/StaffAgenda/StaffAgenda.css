@@ -68,7 +68,7 @@
     flex-direction: column;
     align-items: center;
     align-content: space-around;
-    padding: 1rem 1.5rem;
+    padding: 0 1rem 1.5rem;
     height: auto;
   }
   .agenda_staff {
