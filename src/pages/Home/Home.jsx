@@ -2,6 +2,7 @@ import './Home.css';
 
 import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { InView, useInView } from 'react-intersection-observer';
 
 import StaffCard from '../../components/StaffCard/StaffCard';
 import { API } from '../../services/API.js';
@@ -11,7 +12,7 @@ const Home = () => {
   const { register, handleSubmit, reset } = useForm();
   const [clkSave, setClkSave] = useState(false);
   const [submited, setSubmited] = useState(false);
-
+  const { ref, inView } = useInView();
   const checking = () => {
     setClkSave(!clkSave);
   };
@@ -86,13 +87,15 @@ const Home = () => {
         </div>
       </section>
       <h2>Nuestro equipo</h2>
-      <section className="staff-section">
-        {loaded ? (
-          staff.map((st) => <StaffCard key={st._id} st={st} />)
-        ) : (
-          <p>Loading...</p>
-        )}
-      </section>
+      <InView as="div" onChange={(inView) => console.log('Inview:', inView)}>
+        <section ref={ref} className={`staff-section ${inView ? 'no-hidden' : 'hidden'}`}>
+          {loaded ? (
+            staff.map((st) => <StaffCard key={st._id} st={st} />)
+          ) : (
+            <p>Loading...</p>
+          )}
+        </section>
+      </InView>
       <section className="register-section">
         <h2>Solicitud de registro</h2>
         <form onSubmit={handleSubmit(formSubmit)} id="formulario">
