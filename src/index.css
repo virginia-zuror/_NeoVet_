@@ -20,12 +20,16 @@ body {
 
 :root {
   --primarycolor: whitesmoke;
-  --secondarycolor: rgb(60, 55, 53);
+  --secondarycolor: #3b3b3b;
   --highlightcolor: rgb(74, 153, 187);
   font-family: 'VAG Rounded Std', 'Varela Round', sans-serif;
 }
 
 main {
   margin-top: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
+}
+
+p, h3, h4, h5{
+  color: var(--secondarycolor);
 }

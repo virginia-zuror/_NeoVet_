@@ -1,5 +1,7 @@
 .createpet-page {
   flex-direction: row;
+  width: 100%;
+  margin: 0;
 }
 
 .createpet-section > h2 {
@@ -12,6 +14,8 @@
   align-items: center;
   flex-direction: column;
   gap: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
 }
 
 @media screen and (max-width: 800px) {

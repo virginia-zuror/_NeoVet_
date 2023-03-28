@@ -5,7 +5,7 @@
   justify-content: center;
   gap: 3rem;
   width: 100%;
-  padding: 0 1.5rem;
+  margin: 0;
 }
 
 .clientOverviewSection {
@@ -15,7 +15,9 @@
   justify-content: center;
   gap: 2rem;
   color: var(--highlightcolor);
-  width: 100%;
+  width: 80%;
+  margin-left: auto;
+  margin-top: 2.5rem;
 }
 
 .grid-userclients {
@@ -56,6 +58,9 @@
 }
 
 @media screen and (max-width: 800px) {
+  .clientOverviewSection{
+    margin-left: 0;
+  }
   .clientOverviewMain {
     display: flex;
     flex-direction: column;
