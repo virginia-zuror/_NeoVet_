@@ -17,6 +17,7 @@ nav > a>img {
 nav ul {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -26,7 +27,6 @@ nav ul li {
 }
 li> h4{
   color: var(--primarycolor);
-  padding-top: 85%;
   font-weight: 400;
 }
 .user {
