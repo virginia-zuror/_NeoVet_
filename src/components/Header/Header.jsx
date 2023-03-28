@@ -13,10 +13,12 @@ const Header = () => {
 
   return (
     <nav>
-      <img
-        src="https://res.cloudinary.com/depifliz3/image/upload/v1679840080/samples/animals/Logo_final_Mesa_de_trabajo_1_sfvvbb.png"
-        alt="logo Neovet"
-      />
+      <NavLink to="/">
+        <img
+          src="https://res.cloudinary.com/depifliz3/image/upload/v1679840080/samples/animals/Logo_final_Mesa_de_trabajo_1_sfvvbb.png"
+          alt="logo Neovet"
+        />
+      </NavLink>
       <ul>
         <li>
           <NavLink to="/">Home</NavLink>
@@ -38,7 +40,7 @@ const Header = () => {
         ) : (
           <>
             <li>
-              <NavLink to="#">Login</NavLink>
+              <h4>Login</h4>
               <ul>
                 <li className="dropdown-li">
                   <NavLink to="/loginstaff">Login Staff</NavLink>

@@ -9,7 +9,7 @@ nav {
   padding: 0 1.5rem;
 }
 
-nav > img {
+nav > a>img {
   width: 150px;
   margin-left: 3rem;
 }
@@ -23,6 +23,11 @@ nav ul {
 nav ul li {
   list-style: none;
   position: relative;
+}
+li> h4{
+  color: var(--primarycolor);
+  padding-top: 85%;
+  font-weight: 400;
 }
 .user {
   display: flex;
@@ -101,10 +106,13 @@ nav > ul> li> .active{
 
 }
 @media only screen and (max-width: 768px) {
-  nav > img {
+
+  nav > a {
     margin: auto;
   }
-
+  nav > a >img{
+    margin: 0;
+  }
   nav ul {
     width: 100%;
     display: flex;
@@ -121,4 +129,10 @@ nav > ul> li> .active{
   nav ul li a {
     line-height: normal;
   }
+  li> h4{
+    color: var(--primarycolor);
+    padding-bottom: 80%;
+    font-weight: 400;
+  }
+  
 }
