@@ -34,6 +34,7 @@ const PetDetails = () => {
             birth: pet.birth.toString().split('').slice(0, 10),
             photo: pet.photo,
             appoint: pet.appoint,
+            record: pet.record,
           });
         }
       });
