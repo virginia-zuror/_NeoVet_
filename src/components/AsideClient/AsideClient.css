@@ -1,19 +1,19 @@
-.asideClient {
-  width: 220px;
-  height: 70%;
-  height: 65vh;
+.aside {
   display: flex;
   flex-direction: row;
-  border: 1px solid var(--highlightcolor);
-  border-radius: 4px;
-  padding: 1rem 2rem;
-  margin: 2rem;
   justify-content: center;
+  height: 65vh;
+  width: auto;
+  margin-top: 1.5rem
 }
-
+.asideContainer{
+  width: 220px;
+  height: auto;
+}
 .asideMobile {
   display: none;
   width: 20px;
+
 }
 
 .asideMobileLinks > li > a {
@@ -34,7 +34,10 @@
   align-items: center;
   gap: 1rem;
 }
-
+.asideLinks > li{
+  width: 10rem;
+  padding: .5rem;
+}
 .icon {
   margin: 0 0.5rem;
   width: 16px;
@@ -45,10 +48,19 @@
   filter: none;
 }
 
-.asideLinks > li > a:hover {
-  color: var(--secondarycolor);
+.asideLinks > li:hover{
+  background-color: rgba(74, 153, 187, 20%);
+  border-radius: 12px;
+  color: whitesmoke;
+}
+
+.asideLinks > li:focus {
+  background-color: black;
+  border-radius: 12px;
+}
+.asideLinks > li:hover > a {
+  color:var(--secondarycolor);
   font-size: medium;
-  transition: 0.3s all ease-in-out;
   filter: none;
 }
 
@@ -56,9 +68,9 @@
   display: flex;
 }
 
-.asideLinks > li > .active {
-  border-bottom: 2px solid var(--highlightcolor);
-}
+/* .asideLinks > li > .active {
+  background-color: rgba(74, 153, 187, 45%);
+} */
 
 @media screen and (max-width: 800px) {
   .aside {

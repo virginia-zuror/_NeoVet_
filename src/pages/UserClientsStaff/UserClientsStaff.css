@@ -5,7 +5,10 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 5rem;
+  width: 100%;
+  margin: 0;
 }
+
 .window {
   color: var(--highlightcolor);
   width: 100%;
@@ -14,7 +17,9 @@
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  margin-top: 2.5rem;
 }
+
 .window > h2 {
   color: var(--highlightcolor);
 }

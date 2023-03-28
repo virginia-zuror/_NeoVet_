@@ -20,6 +20,16 @@
   gap: 2rem;
 }
 
+.footerBody > div > p{
+  color:var(--primarycolor);
+}
+.corporative{
+  margin: auto;
+}
+
+.corporative > p{
+  color: var(--primarycolor);
+}
 .pages > li > a:hover {
   color: var(--highlightcolor);
   transition: 0.3s all ease-in-out;
