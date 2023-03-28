@@ -90,6 +90,9 @@
 .pet-details {
   width: 60%;
 }
+.dato>h3, .appointmentss>h3{
+  color: var(--highlightcolor);
+}
 
 @media screen and (max-width: 800px) {
   .patients {

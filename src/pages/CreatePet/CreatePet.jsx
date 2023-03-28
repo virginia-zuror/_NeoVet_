@@ -64,16 +64,6 @@ const CreatePet = () => {
           <div className="container">
             <input
               type="text"
-              id="birth"
-              name="birth"
-              required="on"
-              {...register('birth')}
-            />
-            <label htmlFor="birth">Fecha nacimiento</label>
-          </div>
-          <div className="container">
-            <input
-              type="text"
               id="chip"
               name="chip"
               required="on"
@@ -90,6 +80,16 @@ const CreatePet = () => {
               {...register('gender')}
             />
             <label htmlFor="gender">Género</label>
+          </div>
+          <div className="container">
+            <h3>Fecha nacimiento</h3>
+            <input
+              type="date"
+              id="birth"
+              name="birth"
+              required="on"
+              {...register('birth')}
+            />
           </div>
           <div className="container">
             <input type="file" id="photo" name="photo" {...register('photo')} />
