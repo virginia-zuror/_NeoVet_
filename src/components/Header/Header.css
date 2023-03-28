@@ -132,7 +132,6 @@ nav > ul > li > .active {
   }
   li > h4 {
     color: var(--primarycolor);
-    padding-bottom: 80%;
     font-weight: 400;
   }
 }
