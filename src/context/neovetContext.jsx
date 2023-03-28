@@ -30,7 +30,6 @@ const NeovetContextProvider = ({ children }) => {
     setJwt(resToken);
     localStorage.setItem('token', resToken);
     localStorage.setItem('user', JSON.stringify(resUser));
-    console.log(resUser);
   };
 
   return (

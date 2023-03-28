@@ -4,16 +4,15 @@
   justify-content: center;
   height: 65vh;
   width: auto;
-  margin-top: 1.5rem
+  margin-top: 1.5rem;
 }
-.asideContainer{
+.asideContainer {
   width: 220px;
   height: auto;
 }
 .asideMobile {
   display: none;
   width: 20px;
-
 }
 
 .asideMobileLinks > li > a {
@@ -34,9 +33,9 @@
   align-items: center;
   gap: 1rem;
 }
-.asideLinks > li{
+.asideLinks > li {
   width: 10rem;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 .icon {
   margin: 0 0.5rem;
@@ -48,7 +47,7 @@
   filter: none;
 }
 
-.asideLinks > li:hover{
+.asideLinks > li:hover {
   background-color: rgba(74, 153, 187, 20%);
   border-radius: 12px;
   color: whitesmoke;
@@ -59,7 +58,7 @@
   border-radius: 12px;
 }
 .asideLinks > li:hover > a {
-  color:var(--secondarycolor);
+  color: var(--secondarycolor);
   font-size: medium;
   filter: none;
 }

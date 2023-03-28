@@ -20,14 +20,14 @@
   gap: 2rem;
 }
 
-.footerBody > div > p{
-  color:var(--primarycolor);
+.footerBody > div > p {
+  color: var(--primarycolor);
 }
-.corporative{
+.corporative {
   margin: auto;
 }
 
-.corporative > p{
+.corporative > p {
   color: var(--primarycolor);
 }
 .pages > li > a:hover {

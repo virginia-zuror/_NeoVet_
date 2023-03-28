@@ -45,7 +45,7 @@ const AsideClient = () => {
                 src="https://res.cloudinary.com/depifliz3/image/upload/v1679342582/samples/animals/huella_hbss1b.png"
                 alt="icono huella"
               />
-              Añadir Mascota
+              Crear Mascota
             </NavLink>
           </li>
           <li>

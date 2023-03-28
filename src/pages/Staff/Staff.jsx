@@ -50,7 +50,6 @@ const Staff = () => {
   const [admins, setAdmins] = useState([]);
   const checkNewClients = () => {
     API.get('/admins').then((res) => {
-      console.log('admins', res.data);
       setAdmins(res.data);
       setLoadedClients(true);
     });

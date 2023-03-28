@@ -22,7 +22,6 @@ const UserClientsAgenda = () => {
     API.get('/pets')
       .then((res) => {
         setPetsFound(res.data);
-        console.log(res.data);
         petsFound.map((petFound) => {
           if (allPets.includes(petFound._id)) {
             pets.push(petFound);
@@ -36,7 +35,6 @@ const UserClientsAgenda = () => {
 
   const deleteAppointment = (pendingAppointByPet) => {
     API.delete(`/appointments/${pendingAppointByPet}`).then((res) => {
-      console.log(res.data);
       setDeletedAppointment(pendingAppointByPet);
     });
   };
@@ -47,8 +45,6 @@ const UserClientsAgenda = () => {
 
   useEffect(() => {
     getAllPets();
-    console.log(pendingAppointByPet);
-    console.log(petByUser);
   }, [loaded === true, clkSave === false]);
 
   return (

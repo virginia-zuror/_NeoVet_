@@ -16,8 +16,6 @@ const UserClients = () => {
   const [allUsers, setAllUsers] = useState([]);
   const userLoged = JSON.parse(localStorage.getItem('user'));
 
-  console.log(userLoged.pets);
-
   const getPets = () => {
     API.get('/userclients').then((res) => {
       setAllUsers(res.data);
