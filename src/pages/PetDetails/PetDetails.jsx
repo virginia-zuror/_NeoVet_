@@ -4,24 +4,20 @@ import { useEffect, useState } from 'react';
 
 import AsideClient from '../../components/AsideClient/AsideClient';
 import AsideStaff from '../../components/AsideStaff/AsideStaff';
-import { API } from '../../services/API';
-import Button from '../../UI/Button';
 import GenericPdfDownloader from '../../components/PdfGenerator/PdfGenerator';
+import { API } from '../../services/API';
 
 const PetDetails = () => {
   const [details, setDetails] = useState([]);
   const [petInView, setPetInView] = useState('');
-  const [consults, setConsults] = useState([]);
-  const [citas, setCitas] = useState([]);
+
   const idPet = JSON.parse(localStorage.getItem('pet'));
   const getIdPet = idPet._id;
   const typeUser = JSON.parse(localStorage.getItem('user'));
   const typeOfUser = typeUser.rol;
   const [loaded, setLoaded] = useState(false);
-  /* console.log(idPet); */
-  let arrayCitas = [];
-  const [arrayTotalCitas, setArrayTotalCitas] = useState([]);
-
+  let arrayApDone = [];
+  const [doneAp, setDoneAp] = useState('');
   useEffect(() => {
     const getPets = () => {
       API.get('/pets').then((res) => {
@@ -30,14 +26,26 @@ const PetDetails = () => {
       });
       details.forEach((pet) => {
         if (pet._id === getIdPet) {
-          setPetInView(pet);
+          setPetInView({
+            name: pet.name,
+            specie: pet.specie,
+            breed: pet.breed,
+            chip: pet.chip,
+            birth: pet.birth.toString().split('').slice(0, 10),
+            photo: pet.photo,
+            appoint: pet.appoint,
+          });
         }
+      });
+      petInView.appoint?.map((ap) => {
+        ap.checked === true && ap.state === 'done' && arrayApDone.push(ap);
+        setDoneAp(arrayApDone);
       });
     };
 
     getPets();
-    console.log(petInView.appoint);
-  }, [loaded, petInView.length >= 0]);
+    console.log(doneAp);
+  }, [loaded, petInView.length >= 0, doneAp.length >= 0]);
 
   return (
     <main className="patients">
@@ -57,15 +65,15 @@ const PetDetails = () => {
           <div className="second-date">
             <div className="pet-details-appoints">
               <h2>Citas</h2>
-              {petInView.appoint?.length ? (
-                petInView.appoint.map((ap) => (
+              {doneAp.length ? (
+                doneAp.map((ap) => (
                   <div key={ap._id}>
                     <h3>{ap.date.toString().split('').slice(0, 10)}</h3>
                     <p>{ap.reason}</p>
                   </div>
                 ))
               ) : (
-                <h3>No hay citas confirmadas</h3>
+                <h3>No hay citas realizadas</h3>
               )}
             </div>
             <GenericPdfDownloader
