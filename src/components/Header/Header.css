@@ -32,7 +32,7 @@ nav ul li {
   flex-direction: row;
 }
 
-.avatar-staff > h5, .avatar-staff > p{
+.avatar-staff > h5, .avatar-staff > p, .avatar-staff>div>h5, .avatar-staff>div>p{
   color: var(--primarycolor);
 }
 
@@ -96,7 +96,10 @@ nav ul li ul li a:hover {
   border-radius: 50%;
   object-fit: cover;
 }
+nav > ul> li> .active{
+  text-shadow: 3px 3px 8px var(--secondarycolor) ;
 
+}
 @media only screen and (max-width: 768px) {
   nav > img {
     margin: auto;

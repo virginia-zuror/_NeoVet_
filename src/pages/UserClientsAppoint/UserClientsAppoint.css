@@ -35,6 +35,10 @@
   width: 100%;
   padding: 1rem 0;
 }
+.firstRow>.container>h4, .container>h3{
+  color: var(--highlightcolor);
+}
+
 
 .secondRow {
   display: flex;

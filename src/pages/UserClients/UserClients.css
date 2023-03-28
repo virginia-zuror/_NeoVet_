@@ -60,6 +60,7 @@
 @media screen and (max-width: 800px) {
   .clientOverviewSection{
     margin-left: 0;
+    margin-bottom: 2.5rem;
   }
   .clientOverviewMain {
     display: flex;

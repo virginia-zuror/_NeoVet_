@@ -37,6 +37,13 @@
   transition: 0.3s all ease-in-out;
   filter: none;
 }
+.asideLinks > li > .active{
+  color: var(--secondarycolor);
+  font-size: medium;
+  transition: 0.3s all ease-in-out;
+  filter: none;
+  
+}
 
 .asideLinks > li > a > img:hover {
   transition: 0.3s all ease-in-out;

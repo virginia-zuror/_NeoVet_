@@ -33,9 +33,6 @@ const Footer = () => {
             <NavLink to="/loginclientes">Login Clientes</NavLink>
           </li>
           <li>
-            <NavLink to="/editprofile">Profile</NavLink>
-          </li>
-          <li>
             <NavLink href="#formulario" to="/">
               Registro
             </NavLink>

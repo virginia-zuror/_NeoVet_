@@ -56,7 +56,7 @@ const PetDetails = () => {
           <div className="first-date">
             <img src={petInView.photo} alt={petInView.name} />
             <div>
-              <h2>Nombre: {petInView.name}</h2>
+              <h2>{petInView.name}</h2>
               <h3>Especie: {petInView.specie}</h3>
               <h3>Raza: {petInView.breed}</h3>
               <h3>Chip: {petInView.chip}</h3>
@@ -69,7 +69,7 @@ const PetDetails = () => {
               {doneAp.length ? (
                 doneAp.map((ap) => (
                   <div key={ap._id}>
-                    <h3>{ap.date.toString().split('').slice(0, 10)}</h3>
+                    <p>{ap.date.toString().split('').slice(0, 10)}</p>
                     <p>{ap.reason}</p>
                   </div>
                 ))

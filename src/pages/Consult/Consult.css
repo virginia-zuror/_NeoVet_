@@ -36,7 +36,9 @@
   width: 100%;
   align-items: flex-end;
 }
-
+.filasup > div > h3{
+  color: var(--highlightcolor);
+}
 .filamed {
   display: flex;
   gap: 1rem;
