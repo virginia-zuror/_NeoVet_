@@ -1,6 +1,7 @@
-import React from 'react';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
+import React from 'react';
+
 import Button from '../../UI/Button';
 
 const GenericPdfDownloader = ({ rootElementId, downloadFileName }) => {

@@ -87,7 +87,7 @@ const Home = () => {
         </div>
       </section>
       <h2>Nuestro equipo</h2>
-      <InView as="div" onChange={(inView) => console.log('Inview:', inView)}>
+      <InView as="div">
         <section ref={ref} className={`staff-section ${inView ? 'no-hidden' : 'hidden'}`}>
           {loaded ? (
             staff.map((st) => <StaffCard key={st._id} st={st} />)

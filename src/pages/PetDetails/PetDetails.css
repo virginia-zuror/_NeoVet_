@@ -90,7 +90,8 @@
 .pet-details {
   width: 60%;
 }
-.dato>h3, .appointmentss>h3{
+.dato > h3,
+.appointmentss > h3 {
   color: var(--highlightcolor);
 }
 

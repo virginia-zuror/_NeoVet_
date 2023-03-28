@@ -31,7 +31,6 @@ const UserClientsStaff = () => {
         }
       });
     });
-    console.log(clinic);
     setLoaded(true);
   };
   useEffect(() => {

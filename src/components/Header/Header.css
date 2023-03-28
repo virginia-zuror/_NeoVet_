@@ -9,7 +9,7 @@ nav {
   padding: 0 1.5rem;
 }
 
-nav > a>img {
+nav > a > img {
   width: 150px;
   margin-left: 3rem;
 }
@@ -25,7 +25,7 @@ nav ul li {
   list-style: none;
   position: relative;
 }
-li> h4{
+li > h4 {
   color: var(--primarycolor);
   font-weight: 400;
 }
@@ -37,7 +37,10 @@ li> h4{
   flex-direction: row;
 }
 
-.avatar-staff > h5, .avatar-staff > p, .avatar-staff>div>h5, .avatar-staff>div>p{
+.avatar-staff > h5,
+.avatar-staff > p,
+.avatar-staff > div > h5,
+.avatar-staff > div > p {
   color: var(--primarycolor);
 }
 
@@ -101,16 +104,14 @@ nav ul li ul li a:hover {
   border-radius: 50%;
   object-fit: cover;
 }
-nav > ul> li> .active{
-  text-shadow: 3px 3px 8px var(--secondarycolor) ;
-
+nav > ul > li > .active {
+  text-shadow: 3px 3px 8px var(--secondarycolor);
 }
 @media only screen and (max-width: 768px) {
-
   nav > a {
     margin: auto;
   }
-  nav > a >img{
+  nav > a > img {
     margin: 0;
   }
   nav ul {
@@ -129,10 +130,9 @@ nav > ul> li> .active{
   nav ul li a {
     line-height: normal;
   }
-  li> h4{
+  li > h4 {
     color: var(--primarycolor);
     padding-bottom: 80%;
     font-weight: 400;
   }
-  
 }

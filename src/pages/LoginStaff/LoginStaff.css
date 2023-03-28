@@ -12,8 +12,8 @@
 .form-loginstaff > .container {
   align-self: flex-start;
 }
-.form-loginstaff >.container>input:valid ~ label,
-.form-loginstaff >.container>input:focus ~ label {
+.form-loginstaff > .container > input:valid ~ label,
+.form-loginstaff > .container > input:focus ~ label {
   transform: translateY(-90%) scale(0.9);
   margin-left: 1.3em;
   padding: 0.2em;
