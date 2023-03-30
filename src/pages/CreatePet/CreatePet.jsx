@@ -25,7 +25,7 @@ const CreatePet = () => {
       breed: formData.breed,
       birth: formData.birth,
       chip: formData.chip,
-      gender: formData.gender,
+      gender: formData.gender === 'Macho' ? 'male' : 'female',
       photo: formData.photo[0],
       client: userLoged._id,
     };
@@ -72,13 +72,16 @@ const CreatePet = () => {
             <label htmlFor="chip">Chip</label>
           </div>
           <div className="container">
-            <input
+            <select
               type="text"
               id="gender"
               name="gender"
-              required="on"
+              required
               {...register('gender')}
-            />
+            >
+              <option value="Macho">Macho</option>
+              <option value="Hembra">Hembra</option>
+            </select>
             <label htmlFor="gender">Género</label>
           </div>
           <div className="container">
