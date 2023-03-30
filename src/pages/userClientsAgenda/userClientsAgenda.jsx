@@ -51,13 +51,13 @@ const UserClientsAgenda = () => {
     <main className="content">
       <AsideClient />
       <section className="staff_ap_agenda">
-        <h2>Citas solicitadas:</h2>
+        <h2>Citas programadas: </h2>
         <div className="appoints_agenda">
           {loaded === true ? (
             petByUser.map((pet) =>
               pet.appoint.map(
                 (ap) =>
-                  ap.state === 'pending' && (
+                  ap.state === 'pending' && ap.checked === true && (
                     <figure className="cita_pend_agenda" key={ap._id}>
                       <h4>{pet.name}</h4>
                       <h5>{pet.specie}</h5>
