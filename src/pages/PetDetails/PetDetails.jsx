@@ -30,6 +30,7 @@ const PetDetails = () => {
             name: pet.name,
             specie: pet.specie,
             breed: pet.breed,
+            gender: pet.gender === 'male' ? 'Macho' : 'Hembra',
             chip: pet.chip,
             birth: pet.birth.toString().split('').slice(0, 10),
             photo: pet.photo,
@@ -57,6 +58,7 @@ const PetDetails = () => {
             <img src={petInView.photo} alt={petInView.name} />
             <div>
               <h2>{petInView.name}</h2>
+              <h3>{petInView.gender}</h3>
               <h3>Especie: {petInView.specie}</h3>
               <h3>Raza: {petInView.breed}</h3>
               <h3>Chip: {petInView.chip}</h3>
