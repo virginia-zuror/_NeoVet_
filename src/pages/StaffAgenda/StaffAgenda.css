@@ -1,0 +1,87 @@
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: flex-start;
+  height: 100vh;
+  gap: 2rem;
+}
+.agenda_staff {
+  padding: 5%;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.agenda_staff > h2 {
+  color: var(--highlightcolor);
+}
+.agenda_staff > .appoints {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.app_staff {
+  padding: 0;
+}
+.header_grid {
+  display: grid;
+  color: var(--secondarycolor);
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  height: 2.5rem;
+  align-items: center;
+  justify-items: center;
+  padding: 0.5rem 0;
+  font-size: small;
+}
+.cita {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0.5rem 0;
+  align-items: center;
+  justify-items: center;
+}
+.btns_appoints {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+.btns_appoints > button {
+  width: 90%;
+}
+@media screen and (max-width: 800px) {
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-around;
+    padding: 0 1rem 1.5rem;
+    height: auto;
+  }
+  .agenda_staff {
+    padding: 0;
+    width: 100%;
+  }
+  .app_staff {
+    width: 90%;
+  }
+  .app_staff > .header_grid {
+    font-size: small;
+  }
+  .app_staff > .cita {
+    font-size: small;
+  }
+}

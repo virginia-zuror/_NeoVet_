@@ -1,0 +1,121 @@
+.appointMain {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 5rem;
+  width: 100%;
+  margin: 0;
+}
+
+.appointSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  color: var(--highlightcolor);
+  width: 75vw;
+  padding-right: 18rem;
+  margin-top: 2rem;
+}
+
+.appointSection > input {
+  width: 50%;
+}
+
+#create_appoint {
+  display: flex;
+}
+
+.firstRow {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 1rem 0;
+}
+.firstRow > .container > h4,
+.container > h3 {
+  color: var(--highlightcolor);
+}
+
+.secondRow {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.comments {
+  height: 10rem;
+}
+
+.secondRow > .container-admins {
+  width: 100%;
+}
+
+.secondRow > .container-admins > select {
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .appointMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+    gap: 1rem;
+  }
+
+  .form-pedir-cita {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .appointSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .secondRow {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .firstRow {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .comments {
+    width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    justify-content: center;
+  }
+  .comments {
+    width: 80vw;
+  }
+
+  .container select {
+    width: 80vw;
+  }
+}

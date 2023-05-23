@@ -1,0 +1,26 @@
+.pet_card {
+  display: grid;
+  width: 300px;
+  height: auto;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  text-align: center;
+  justify-items: center;
+}
+
+.pet_card > img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.info-pet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: medium;
+}
+
+@media screen and (max-width: 800px) {
+}

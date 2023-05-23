@@ -1,0 +1,96 @@
+.content {
+  width: 100%;
+  margin: 0;
+}
+
+.window_agenda {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: auto;
+  width: 70%;
+  height: auto;
+  padding-right: 10%;
+}
+
+.staff_ap_agenda {
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+.staff_ap_agenda > h2 {
+  color: var(--highlightcolor);
+}
+
+.appoints_agenda {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.appoints_agenda > :nth-child(odd) {
+  background-color: rgba(74, 153, 187, 30%);
+}
+
+.cita_pend_agenda {
+  display: grid;
+  grid-template-columns: repeat(5, 115px);
+  gap: 0.2rem;
+  align-items: start;
+  justify-content: center;
+  justify-items: center;
+  padding: 0.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .content {
+    margin-top: 0;
+    padding: 0;
+  }
+  .window_agenda {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .staff_ap_agenda {
+    max-width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .appoints_agenda {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cita_pend_agenda {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+}

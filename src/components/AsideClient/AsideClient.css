@@ -1,0 +1,104 @@
+.aside {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 65vh;
+  width: auto;
+  margin-top: 1.5rem;
+}
+.asideContainer {
+  width: 220px;
+  height: auto;
+}
+.asideMobile {
+  display: none;
+  width: 20px;
+}
+
+.asideMobileLinks > li > a {
+  color: var(--secondarycolor);
+  filter: invert(51%) sepia(77%) saturate(305%) hue-rotate(153deg) brightness(92%)
+    contrast(92%);
+}
+
+.asideLinks > li > a {
+  color: var(--secondarycolor);
+  filter: invert(51%) sepia(77%) saturate(305%) hue-rotate(153deg) brightness(92%)
+    contrast(92%);
+}
+
+.asideLinks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.asideLinks > li {
+  width: 10rem;
+  padding: 0.5rem;
+}
+.icon {
+  margin: 0 0.5rem;
+  width: 16px;
+  height: auto;
+}
+
+.aside:hover {
+  filter: none;
+}
+
+.asideLinks > li:hover {
+  background-color: rgba(74, 153, 187, 20%);
+  border-radius: 12px;
+  color: whitesmoke;
+}
+
+.asideLinks > li:focus {
+  background-color: black;
+  border-radius: 12px;
+}
+.asideLinks > li:hover > a {
+  color: var(--secondarycolor);
+  font-size: medium;
+  filter: none;
+}
+
+.asideClientContainer {
+  display: flex;
+}
+
+/* .asideLinks > li > .active {
+  background-color: rgba(74, 153, 187, 45%);
+} */
+
+@media screen and (max-width: 800px) {
+  .aside {
+    display: none;
+  }
+
+  .asideMobile {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .asideMobileLinks {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+  }
+
+  .icon {
+    width: 2.5rem;
+    margin: 1rem 0;
+  }
+
+  .asideMobileLinks > li > a:hover {
+    color: var(--secondarycolor);
+    font-size: medium;
+    transition: 0.3s all ease-in-out;
+    filter: none;
+  }
+}

@@ -1,0 +1,156 @@
+.staff_overview {
+  gap: 3rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0 0;
+  width: 100%;
+  height: auto;
+}
+.window-staff {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2rem;
+  padding-top: 2rem;
+  width: 75%;
+  height: auto;
+  color: var(--secondarycolor);
+}
+.staff_ap {
+  max-width: 60%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-start;
+  justify-content: center;
+
+  text-align: center;
+}
+.staff_rg {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 40%;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0.5rem;
+}
+.staff_ap > h2,
+.staff_rg > h2 {
+  color: var(--highlightcolor);
+  text-align: center;
+}
+.appoints {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.appoints > :nth-child(odd) {
+  background-color: rgba(74, 153, 187, 30%);
+}
+
+.registros > :nth-child(odd) {
+  background-color: rgba(74, 153, 187, 30%);
+}
+
+.registros {
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.cita_pend {
+  display: grid;
+  grid-template-columns: repeat(5, 115px);
+  gap: 0.2rem;
+  align-items: start;
+  justify-content: center;
+  justify-items: center;
+  padding: 0.5rem;
+}
+
+.reg_pend {
+  padding: 1rem 2.5rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .staff_overview {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    height: auto;
+    gap: 0;
+  }
+  .window-staff {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding-top: 2rem;
+    gap: 2rem;
+    height: auto;
+  }
+  .staff_ap,
+  .staff_rg {
+    min-width: 90%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+  }
+
+  .staff_rg {
+    margin-bottom: 2rem;
+  }
+  .appoints {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .cita_pend {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .registros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+  }
+  .reg_pend {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+}

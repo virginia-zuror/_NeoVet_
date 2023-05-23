@@ -1,0 +1,74 @@
+.clientOverviewMain {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 3rem;
+  width: 100%;
+  margin: 0;
+}
+
+.clientOverviewSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: var(--highlightcolor);
+  width: 80%;
+  margin-left: auto;
+  margin-top: 2.5rem;
+}
+
+.grid-userclients {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  height: auto;
+  align-content: center;
+  justify-items: center;
+}
+.grid-userclients > div {
+  display: flex;
+  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 3px 30px 0 rgba(31, 38, 135, 0.197);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.grid-userclients > div:hover {
+  scale: 1.05;
+  transition: 0.3s all ease-in-out;
+}
+.buts_pets {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .clientOverviewSection {
+    margin-left: 0;
+    margin-bottom: 2.5rem;
+  }
+  .clientOverviewMain {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+    gap: 1rem;
+  }
+}

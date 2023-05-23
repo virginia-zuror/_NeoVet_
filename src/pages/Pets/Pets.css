@@ -1,0 +1,71 @@
+.patients {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  width: 100%;
+}
+
+.editSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  color: var(--highlightcolor);
+  width: 75%;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.editSection > input {
+  width: 50%;
+}
+
+.pet_figure {
+  display: flex;
+  gap: 10rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--primarycolor);
+  color: var(--highlightcolor);
+  justify-content: space-between;
+}
+.pet-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  min-width: 126px;
+}
+@media only screen and (max-width: 768px) {
+  .patients {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .editSection {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .grid-patients {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+  .pet_figure {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+  }
+}

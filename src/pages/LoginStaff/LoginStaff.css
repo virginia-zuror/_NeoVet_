@@ -1,0 +1,34 @@
+.loginStaff_main {
+  height: 75vh;
+}
+
+.form-loginstaff > .container {
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-loginstaff > .container {
+  align-self: flex-start;
+}
+.form-loginstaff > .container > input:valid ~ label,
+.form-loginstaff > .container > input:focus ~ label {
+  transform: translateY(-90%) scale(0.9);
+  margin-left: 1.3em;
+  padding: 0.2em;
+  background-color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .loginStaff_main {
+    height: 70vh;
+  }
+
+  .form-loginstaff > .container {
+    gap: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,21 @@
+.staff_card {
+  width: 20rem;
+  height: 380px;
+  padding: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+.staff_card > .staff_img {
+  height: 15rem;
+  width: 12.5rem;
+}
+.staff_card > .staff_img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
